@@ -1,0 +1,38 @@
+{
+  "name": "transaction",
+  "plural": "transactions",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "item": {
+      "type": "Schema.Types.ObjectId",
+      "ref": "s_itemList",
+      "required": true
+    },
+    "shopper": {
+      "type": "Date.Types.ObjectId",
+      "ref": "authenticate",
+      "required": true
+    },
+    "buyer": {
+      "type": "Date.Types.ObjectId",
+      "ref": "authenticate",
+      "required": true
+    },
+    "price": {
+      "type": "number",
+      "required": true
+    },
+    "createAt": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
