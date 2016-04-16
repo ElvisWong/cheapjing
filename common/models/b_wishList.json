@@ -9,7 +9,7 @@
   "properties": {
     "user": {
       "type": "Schema.Types.ObjectId",
-      "ref": "User",
+      "ref": "authenticate",
       "required": true
     },
     "item": {
