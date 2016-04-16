@@ -1,6 +1,9 @@
 angular.module('starter.controllers', [])
 
 .controller('googlemapCtrl', function($scope, $rootScope){
+
+
+	
     
     $scope.disableTap = function() {
         var container = document.getElementsByClassName('pac-container');
@@ -106,6 +109,9 @@ angular.module('starter.controllers', [])
 })
 
 .controller('AppCtrl', function($scope, $rootScope, $state, Member, $ionicPopup, Loading, $ionicLoading) {
+
+	$scope.wishes = [];
+	$scope.global_items = [];
 
 	$rootScope.user = {};
 
@@ -267,7 +273,7 @@ angular.module('starter.controllers', [])
 
 	function activate() {
 		console.log("hello world");		
-		$scope.items = Wishlist.all();
+		$scope.wishes = Wishlist.all();
 		$scope.global_items = Itemlist.all();
 	}
 
@@ -276,10 +282,28 @@ angular.module('starter.controllers', [])
         $state.go('whitelist_item');
     }
     
+	$scope.onclick_wishes = function (index) {
+
+		console.log("in onclick wishes", index, $scope.wishes[index]);
+		for(i in $scope.wishes[index].wish_item_offers){
+			$scope.wish_item_offers.push({
+				shopper_name: $scope.wishes[index].wish_item_offers[i].shopper_name,
+		        item_name: $scope.wishes[index].wish_item_offers[i].item_name,
+		        quatity: $scope.wishes[index].wish_item_offers[i].quatity,
+		        item_price: $scope.wishes[index].wish_item_offers[i].item_price,
+		        location: $scope.wishes[index].wish_item_offers[i].location
+			});
+		}
+		$state.go('buyertab.wishitem', {index: index});
+	}
+
 	$scope.onclick_global_itemlist = function (index) {
-		$scope.items.push({
+		console.log("called global_item_list" , $scope.global_items[index]); 
+		$scope.wishes.push({
 			id: $scope.global_items[index].id,
-			item_name: $scope.global_items[index].item_name})
+			item_name: $scope.global_items[index].item_name,
+			wish_item_offers: $scope.global_items[index].wish_item
+		});
 		$scope.global_items.splice(index, 1);
 
 	}
@@ -287,11 +311,7 @@ angular.module('starter.controllers', [])
     $scope.addItem = function () {
     	$scope.add_query = ""
     	$scope.global_items.sort(function(a, b){
-    		var id_sort = a.id - b.id
-    		if(id_sort == 0){
-    			return a.item_name - b.item_name;
-    		}
-    		return id_sort;
+    		return a.id - b.id;
     	});
 	    var myPopup = $ionicPopup.show({
 	    template: '<input ng-model="add_query" ></br></br>' + 
@@ -312,13 +332,13 @@ angular.module('starter.controllers', [])
     };
 
     $scope.removeItem = function ( idx ) {
-		var item_to_delete = $scope.items[idx];
+		var item_to_delete = $scope.wishes[idx];
 		//Wishes.DeletePerson({ id: person_to_delete.id }, function (success) {
 		    $scope.global_items.push({
-		    	id: $scope.items[idx].id,
-		    	item_name: $scope.items[idx].item_name
+		    	id: $scope.wishes[idx].id,
+		    	item_name: $scope.wishes[idx].item_name
 		    });
-		    $scope.items.splice(idx, 1);
+		    $scope.wishes.splice(idx, 1);
 		//});
 	};
 
@@ -330,12 +350,10 @@ angular.module('starter.controllers', [])
 
 	$scope.items = [];
 
+	activate()
+
 	function activate() {
-		Inventory.all({}, function(Inventory) {
-			$scope.items = inventory;
-		}, function(err) {
-			console.log(err)
-		});
+		$scope.items = Inventory.all();
 	}
 
     $scope.addItem = function () {

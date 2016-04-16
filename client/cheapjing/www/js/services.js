@@ -4,37 +4,7 @@ angular.module('starter.services', [])
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
-  var wishes = [{
-    id: 1,
-    item_name: "A"
-  }, {
-    id: 1,
-    item_name: "B"
-  }, {
-    id: 1,
-    item_name: "C"
-  }, {
-     id: 1,
-    item_name: "D"
-  }, {
-    id: 1,
-    item_name: "E"
-  }, {
-    id: 1,
-    item_name: "F"
-  }, {
-    id: 1,
-    item_name: "G"
-  }, {
-    id: 1,
-    item_name: "H"
-  }, {
-    id: 1,
-    item_name: "I"
-  }, {
-    id: 1,
-    item_name: "J"
-  }];
+  var wishes = [];
 
   return {
     all: function() {
@@ -60,7 +30,30 @@ angular.module('starter.services', [])
   // Some fake testing data
   var wishes = [{
     id: 1,
-    item_name: "A1"
+    item_name: "A1",
+    wish_item: [
+      {
+        shopper_name: "",
+        item_name: "",
+        quatity: 10,
+        item_price: 9.90,
+        location: ""
+      },
+      {
+        shopper_name: "",
+        item_name: "",
+        quatity: 10,
+        item_price: 9.90,
+        location: ""
+      },
+      {
+        shopper_name: "",
+        item_name: "",
+        quatity: 10,
+        item_price: 9.90,
+        location: ""
+      }
+    ]
   }, {
     id: 2,
     item_name: "B2"
@@ -112,7 +105,7 @@ angular.module('starter.services', [])
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
-  var wishes = [{
+  var items = [{
     id: 1,
     item_name: "A1",
     item_count: 132,
@@ -166,15 +159,15 @@ angular.module('starter.services', [])
 
   return {
     all: function() {
-      return wishes;
+      return items;
     },
     remove: function(chat) {
-      wishes.splice(wishes.indexOf(chat), 1);
+      items.splice(items.indexOf(chat), 1);
     },
     get: function(chatId) {
-      for (var i = 0; i < wishes.length; i++) {
-        if (wishes[i].id === parseInt(chatId)) {
-          return wishes[i];
+      for (var i = 0; i < items.length; i++) {
+        if (items[i].id === parseInt(chatId)) {
+          return items[i];
         }
       }
       return null;
