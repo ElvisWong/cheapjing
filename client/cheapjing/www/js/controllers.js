@@ -95,16 +95,11 @@ angular.module('starter.controllers', [])
     };
 })
 
-.controller('AppCtrl', function($scope, $rootScope, $state, Authenticate) {
+.controller('AppCtrl', function($scope, $rootScope, $state, Member) {
 
 	$rootScope.user = {};
 
 	$scope.getUser = getUser;
-
-	activate();
-
-	function activate() {
-		console.log("hello world");
 
     $scope.login = login;
     $scope.logout = logout;
@@ -113,8 +108,8 @@ angular.module('starter.controllers', [])
     $scope.input.where = {};
     $scope.input.where.email = 'abc@abc.com';
     $scope.input.where.password = '123456';
-    }
-	function login() {
+
+    function login() {
 		$scope.getUser();
 	};
     
@@ -125,7 +120,7 @@ angular.module('starter.controllers', [])
     
 	function getUser() {
         
-		Authenticate.findOne(JSON.stringify($scope.input), function(user) {
+		Member.findOne(JSON.stringify($scope.input), function(user) {
 			console.log("user: ", user);
             $rootScope.user = user;
             //alert(user.userType);
