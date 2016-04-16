@@ -10,7 +10,7 @@ angular.module('starter.controllers', [])
 
 
 })
-.controller('HomeCtrl', function($scope, Authenticate) {
+.controller('HomeCtrl', function($scope, Member) {
 
 	$scope.user = { };
 
@@ -24,8 +24,8 @@ angular.module('starter.controllers', [])
 		$scope.getUser();
 	};
 	function getUser(username) {
-		Authenticate.findOne(JSON.stringify({id:1}), function(user) {
-			console.log("user: ", user);
+		Member.getMember({}, function(response) {
+			console.log("user: ", response.member);
 		}, function(e) {
 			console.log(e);
 		});

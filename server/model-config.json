@@ -25,15 +25,19 @@
     "dataSource": "db",
     "public": false
   },
-  "Authenticate": {
+  "Member": {
     "dataSource": "cheapjingDS",
     "public": true
   },
-  "s_inventory": {
+  "Inventory": {
     "dataSource": "cheapjingDS",
     "public": true
   },
-  "transaction": {
+  "Itemlist": {
+    "dataSource": "cheapjingDS",
+    "public": true
+  },
+  "Transaction": {
     "dataSource": "cheapjingDS",
     "public": true
   }

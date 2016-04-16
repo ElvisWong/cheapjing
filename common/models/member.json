@@ -1,7 +1,6 @@
 {
-  "name": "Authenticate",
-  "plural": "Authenticates",
-  "base": "PersistedModel",
+  "name": "Member",
+  "base": "User",
   "idInjection": true,
   "options": {
     "validateUpsert": true
@@ -12,10 +11,6 @@
       "required": true
     },
     "password": {
-      "type": "string",
-      "required": true
-    },
-    "oAuthAgent": {
       "type": "string",
       "required": true
     },

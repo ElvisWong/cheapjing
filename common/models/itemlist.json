@@ -1,5 +1,5 @@
 {
-  "name": "Inventory",
+  "name": "Itemlist",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -13,24 +13,10 @@
     "description": {
       "type": "string",
       "required": false
-    },
-    "quantity": {
-      "type": "number",
-      "required": true
-    },
-    "price": {
-      "type": "number",
-      "required": true
     }
   },
   "validations": [],
-  "relations": {
-    "shopper": {
-      "type": "belongsTo",
-      "model": "authenticate",
-      "foreignKey": "memberId"
-    }
-  },
+  "relations": {},
   "acls": [],
   "methods": {}
 }
