@@ -126,7 +126,7 @@ angular.module('starter', ['ionic', 'ionic.service.core', 'ngCordova','starter.c
       .state('shoppertab.inventory', {
         url: '/inventory',
         views: {
-          'tab-investory': {
+          'tab-inventory': {
             templateUrl: 'templates/tab-inventory.html',
             controller: 'InventoryCtrl'
           }

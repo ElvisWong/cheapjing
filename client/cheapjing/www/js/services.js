@@ -106,7 +106,7 @@ angular.module('starter.services', [])
       return null;
     }
   };
-});
+})
 
 .factory('Inventory', function() {
   // Might use a resource here that returns a JSON array
