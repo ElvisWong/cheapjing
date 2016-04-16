@@ -1,6 +1,6 @@
 {
-  "name": "s_itemList",
-  "plural": "s_itemLists",
+  "name": "s_inventory",
+  "plural": "s_inventory",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {

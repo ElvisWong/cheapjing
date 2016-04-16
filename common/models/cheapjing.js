@@ -1,3 +1,3 @@
-module.exports = function(Cheapjing) {
+module.exports = function(cheapjing) {
 
 };
