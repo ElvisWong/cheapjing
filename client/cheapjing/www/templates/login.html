@@ -3,10 +3,26 @@
         <button class="button button-icon button-clear icon-fa-cog-16" menu-toggle="right"></button>
     </ion-nav-buttons>
     <ion-content padding="true" class="has-header animated bounceInDown">
-        <div class="spacer" style="height: 20px;"></div>        
+        <div class="spacer" style="height: 25px;"></div>        
         <div class="content">
             <div class="app-icon"></div>
             <h1 style="text-align: center">CheapJing</h1>
-        </div>        
+        </div>  
+        <div class="spacer" style="height: 20px;"></div>
+        <form>
+            <ion-list>
+                <label class="item item-input white-input-field">
+                    <span class="input-label"><i class="icon icon-fa-user input"></i></span>
+                    <input type="text" placeholder="Username" ng-model="loginData.user_name" maxlength="20" required>
+                </label>
+                <div class="spacer" style="height: 10px;"></div>
+                <label class="item item-input white-input-field">
+                    <span class="input-label"><i class="icon icon-fa-key input"></i></span>
+                    <input type="password" placeholder="Password" ng-model="loginData.user_password" maxlength="20" required>
+                </label>
+            </ion-list>
+            <div class="spacer" style="height: 20px;"></div>
+            <button nav-clear menu-close ng-disabled="!(loginData.user_name && loginData.user_password)" class="button button-block button-assertive icon-left icon-fa-sign-in" type="submit">Login</button>
+        </form>        
     </ion-content>
 </ion-view>

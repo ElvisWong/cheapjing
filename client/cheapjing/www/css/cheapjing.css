@@ -208,6 +208,27 @@ ion-item:hover {
     text-align: center;    
 }
 
+.icon-fa-key:before {
+    font-family: "fontawesome";
+    content: "\f084";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-user:before {
+    font-family: "fontawesome";
+    content: "\f007";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-sign-in:before {
+    font-family: "fontawesome";
+    content: "\f090";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
 .slider {
     height: 100%;
 }
@@ -238,4 +259,11 @@ ion-item:hover {
 
 .input {
     color: #ef2a10;
+}
+
+.pane {
+    background: url("../img/background.png") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
 }
