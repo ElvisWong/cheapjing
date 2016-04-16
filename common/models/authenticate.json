@@ -44,8 +44,12 @@
       "type": "Date",
       "required": true
     },
-    "wishList": [{ }],
-    "inventoryList": [{ }]
+    "wishList": {
+      "type": ["object"]
+    },
+    "inventoryList": {
+      "type": ["object"]
+    }
   },
   "validations": [],
   "relations": {},

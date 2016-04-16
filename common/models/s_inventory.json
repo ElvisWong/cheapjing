@@ -15,7 +15,10 @@
       "type": "string",
       "required": false
     },
-    "shopper": [{ }]
+    "shopper": {
+      "type": ["Object"],
+      "required": true
+    }
   },
   "validations": [],
   "relations": {},

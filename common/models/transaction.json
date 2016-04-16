@@ -8,17 +8,17 @@
   },
   "properties": {
     "item": {
-      "type": "Schema.Types.ObjectId",
+      "type": "string",
       "ref": "s_itemList",
       "required": true
     },
     "shopper": {
-      "type": "Date.Types.ObjectId",
+      "type": "string",
       "ref": "authenticate",
       "required": true
     },
     "buyer": {
-      "type": "Date.Types.ObjectId",
+      "type": "string",
       "ref": "authenticate",
       "required": true
     },
@@ -32,7 +32,23 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "s_inventory": {
+      "type": "belongsTo",
+      "model": "s_inventory",
+      "foreignKey": "item"
+    },
+    "authenticate": {
+      "type": "belongsTo",
+      "model": "authenticate",
+      "foreignKey": "shopper"
+    },
+    "authenticate": {
+      "type": "belongsTo",
+      "model": "authenticate",
+      "foreignKey": "buyer"
+    }
+  },
   "acls": [],
   "methods": {}
 }
