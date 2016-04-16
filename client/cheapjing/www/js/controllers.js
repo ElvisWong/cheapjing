@@ -95,7 +95,7 @@ angular.module('starter.controllers', [])
     };
 })
 
-.controller('AppCtrl', function($scope, $rootScope, $state, Authenticate) {
+.controller('AppCtrl', function($scope, $rootScope, $state, Member) {
 
 	$rootScope.user = {};
 
@@ -119,7 +119,7 @@ angular.module('starter.controllers', [])
     
 	function getUser() {
         
-		Authenticate.findOne(JSON.stringify($scope.input), function(user) {
+		Member.findOne(JSON.stringify($scope.input), function(user) {
 			console.log("user: ", user);
             $rootScope.user = user;
             //alert(user.userType);
