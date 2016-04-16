@@ -1,0 +1,12 @@
+<ion-view view-title="CheapJing" ng-init="initGoogleMap()" hide-nav-bar="false" hide-back-button="false" can-swipe-back="false">
+    <ion-pane>
+        <ion-content>
+            <ion-list>
+                <ion-item class="item-input controls">             
+                    <input id="pac-input" type="text" placeholder="Location" data-tap-disabled="true" ng-change='disableTap()' ng-model="search">
+                </ion-item>
+            </ion-list>    
+            <div id="fullmap" data-tap-disabled="true"></div>
+        </ion-content>
+    </ion-pane>
+</ion-view>

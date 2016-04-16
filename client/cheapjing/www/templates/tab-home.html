@@ -1,5 +1,108 @@
-<ion-view view-title="Home">
-  <ion-content class="padding">
-    <h2>Home</h2>
-  </ion-content>
+<ion-view view-title="CheapJing" ng-init="init()" hide-nav-bar="false" hide-back-button="false" can-swipe-back="false">
+    <div class="spacer" style="height: 40px;"></div>
+    <ion-content class="padding" padding="false" class="has-header" overflow-scroll="true">
+        <ion-refresher pulling-text="Pull To Refresh" on-refresh="onRefresh()">
+        </ion-refresher>
+        <div ng-if="system.isLoading" class="row">
+            <div class="col col-center">
+                <h2 style="text-align: center;"><ion-spinner icon="bubbles"></ion-spinner></h2>
+            </div>
+        </div>
+        <ion-slide-box style="height:280px; margin: 0; padding: 0;">
+            <ion-slide class="animated flipInX" style="background: url('img/back2.png'); background-size: cover;">
+                <div class="spacer" style="height: 20px;"></div>
+                <div ng-click="popupProfilePicture()" style="text-align:center;">                             
+                    <img class="profile-pic animated bounceIn" src="img/max.png">
+                </div>
+                <div class="spacer" style="height: 10px;"></div>
+            </ion-slide>
+        </ion-slide-box>
+        <div class="card">
+            <div ng-if="card.isNotification" ng-click="changeNotification()" class="item item-divider">
+                <div class="row row-center">
+                    <div class="col col-10"></div>
+                    <div class="col col-80">
+                        <h2 style="text-align: center;"><i class="icon icon-fa-bell"></i> <b>Notification</b></h2></div>
+                    <div class="col col-10">
+                        <h2 style="text-align: right;"><i class="icon icon-fa-minus-square"></i></h2></div>
+                </div>
+            </div>
+            <div ng-if="!card.isNotification" ng-click="changeNotification()" class="item item-divider">
+                <div class="row row-center">
+                    <div class="col col-10"></div>
+                    <div class="col col-80">
+                        <h2 style="text-align: center;"><i class="icon icon-fa-bell"></i> <b>Notification</b></h2></div>
+                    <div class="col col-10">
+                        <h2 style="text-align: right;"><i class="icon icon-fa-plus-square"></i></h2></div>
+                </div>
+            </div>
+            <div ng-if="card.isNotification" class="item item-text-wrap">
+                <div class="row row-center">
+                    <div class="col col-20">
+                        <i class="icon icon-fa-commenting-22"></i>
+                    </div>
+                    <div class="col">
+                        <h2>No System Message</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div ng-if="card.isProfileInfo" ng-click="changeProfileInfo()" class="item item-divider">
+                <div class="row row-center">
+                    <div class="col col-10"></div>
+                    <div class="col col-80">
+                        <h2 style="text-align: center;"><i class="icon icon-fa-info-circle"></i> <b>User Profile</b></h2></div>
+                    <div class="col col-10">
+                        <h2 style="text-align: right;"><i class="icon icon-fa-minus-square"></i></h2></div>
+                </div>
+            </div>
+            <div ng-if="!card.isProfileInfo" ng-click="changeProfileInfo()" class="item item-divider">
+                <div class="row row-center">
+                    <div class="col col-10"></div>
+                    <div class="col col-80">
+                        <h2 style="text-align: center;"><i class="icon icon-fa-info-circle"></i> <b>UserProfile</b></h2></div>
+                    <div class="col col-10">
+                        <h2 style="text-align: right;"><i class="icon icon-fa-plus-square"></i></h2></div>
+                </div>
+            </div>
+            <div ng-show="card.isProfileInfo" class="item item-text-wrap">
+                <div class="row row-center">
+                    <div class="col col-20">
+                        <i class="icon icon-fa-user-22"></i>
+                    </div>
+                    <div class="col">
+                        <h2>{{$root.user.name}}</h2>
+                    </div>
+                </div>
+            </div>
+            <div ng-show="card.isProfileInfo" class="item item-text-wrap">
+                <div class="row row-center">
+                    <div class="col col-20">
+                        <i class="icon icon-fa-email-22"></i>
+                    </div>
+                    <div class="col">
+                        <h2><a href="mailto:{{$root.user.email}}">{{$root.user.email}}</a></h2>
+                    </div>
+                </div>
+            </div>
+            <div ng-show="card.isProfileInfo" class="item item-text-wrap">
+                <div class="row row-center">
+                    <div class="col col-20">
+                        <i class="icon icon-fa-map-marker"></i>
+                    </div>
+                    <div ng-if="$root.user.address && $root.user.address != '' && $root.user.address != 'string'" class="col col-80" ng-click="onClickGoogleMap()">
+                        <h2>{{$root.user.address}}</h2>
+                    </div>
+                    <div ng-if="!($root.user.address && $root.user.address != '' && $root.user.address != 'string')" class="col col-80">
+                        <h2><i class="icon icon-fa-times assertive"></i></h2>
+                    </div>
+                </div>
+                <div ng-if="$root.user.address && $root.user.address != '' && $root.user.address != 'string'" class="spacer" style="height: 3px;"></div>
+                <div ng-if="$root.user.address && $root.user.address != '' && $root.user.address != 'string'" class="row row-center">
+                    <div class="col col-center" id="google_map" data-tap-disabled="true"></div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
 </ion-view>

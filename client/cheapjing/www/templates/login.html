@@ -1,4 +1,4 @@
-<ion-view title="CheapJing" hide-nav-bar="false" hide-back-button="true">
+<ion-view view-title="CheapJing" hide-nav-bar="false" hide-back-button="true" can-swipe-back="false">
     <ion-nav-buttons side="right">
         <button class="button button-icon button-clear icon-fa-cog-16" menu-toggle="right"></button>
     </ion-nav-buttons>
@@ -13,16 +13,16 @@
             <ion-list>
                 <label class="item item-input white-input-field">
                     <span class="input-label"><i class="icon icon-fa-user input"></i></span>
-                    <input type="text" placeholder="Username" ng-model="input.user_name" maxlength="20" required>
+                    <input type="text" placeholder="Username" ng-model="input.where.email" maxlength="20" required>
                 </label>
                 <div class="spacer" style="height: 10px;"></div>
                 <label class="item item-input white-input-field">
                     <span class="input-label"><i class="icon icon-fa-key input"></i></span>
-                    <input type="password" placeholder="Password" ng-model="input.user_password" maxlength="20" required>
+                    <input type="password" placeholder="Password" ng-model="input.where.password" maxlength="20" required>
                 </label>
             </ion-list>
             <div class="spacer" style="height: 20px;"></div>
-            <button ng-click="onClickLogin" ng-disabled="!(input.user_name && input.user_password)" class="button button-block button-assertive icon-left icon-fa-sign-in" type="submit">Login</button>
+            <button ng-click="login()" ng-disabled="!(input.where.email && input.where.password)" class="button button-block button-assertive icon-left icon-fa-sign-in" type="submit">Login</button>
         </form>        
     </ion-content>
 </ion-view>

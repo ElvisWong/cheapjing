@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'ngCordova','starter.controllers', 'ngResource', 'lbServices'])
+angular.module('starter', ['ionic','ionic.service.core', 'ngCordova','starter.controllers', 'ngResource', 'lbServices'])
 
 .run(function($ionicPlatform, $rootScope, $state, $location) {
   $ionicPlatform.ready(function() {
@@ -42,8 +42,20 @@ angular.module('starter', ['ionic', 'ngCordova','starter.controllers', 'ngResour
     .state('login', {
         url: "/login",
         templateUrl: "templates/login.html",
-        controller: 'LoginCtrl',
+        controller: 'AppCtrl',
         data: {auth: ''}
+    })
+  
+    .state('menu', {
+      url: '/menu',
+      templateUrl: 'templates/menu.html',
+      controller: 'AppCtrl'
+    })
+  
+    .state('google_map', {
+      url: '/google_map',
+      templateUrl: 'templates/google_map.html',
+      controller: 'googlemapCtrl'
     })
   
     .state('buyertab', {
