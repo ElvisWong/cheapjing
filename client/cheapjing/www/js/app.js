@@ -85,11 +85,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 })
 
 
-// .config(function(LoopBackResourceProvider) {
+.config(function(LoopBackResourceProvider) {
  
-//     // Use a custom auth header instead of the default 'Authorization'
-//     LoopBackResourceProvider.setAuthHeader('X-Access-Token');
+    // Use a custom auth header instead of the default 'Authorization'
+    LoopBackResourceProvider.setAuthHeader('X-Access-Token');
  
-//     // Change the URL where to access the LoopBack REST API server
-//     LoopBackResourceProvider.setUrlBase('localhost:3000/api/');
-//   });;
+    // Change the URL where to access the LoopBack REST API server
+    LoopBackResourceProvider.setUrlBase('localhost:3000/api/');
+  });;
