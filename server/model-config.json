@@ -35,5 +35,9 @@
   "cheapjing": {
     "dataSource": "db",
     "public": true
+  },
+  "Authenticate": {
+    "dataSource": "cheapjingDS",
+    "public": true
   }
 }
