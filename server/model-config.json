@@ -44,10 +44,6 @@
     "dataSource": "cheapjingDS",
     "public": true
   },
-  "cheapjing": {
-    "dataSource": "cheapjingDS",
-    "public": true
-  },
   "s_inventory": {
     "dataSource": "cheapjingDS",
     "public": true
