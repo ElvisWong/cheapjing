@@ -101,11 +101,6 @@ angular.module('starter.controllers', [])
 
 	$scope.getUser = getUser;
 
-	activate();
-
-	function activate() {
-		console.log("hello world");
-
     $scope.login = login;
     $scope.logout = logout;
 
@@ -113,8 +108,8 @@ angular.module('starter.controllers', [])
     $scope.input.where = {};
     $scope.input.where.email = 'abc@abc.com';
     $scope.input.where.password = '123456';
-    }
-	function login() {
+
+    function login() {
 		$scope.getUser();
 	};
     
