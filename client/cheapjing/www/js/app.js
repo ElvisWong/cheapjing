@@ -20,12 +20,13 @@ angular.module('starter', ['ionic', 'ngCordova','starter.controllers', 'ngResour
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
-    $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){
-      if ( toState.data.auth === 'requireLogin' ) {
-          console.log("go back login!");
-          $location.url('/login');
-      }
-    });
+      
+    // $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){
+    //   if ( toState.data.auth === 'requireLogin' ) {
+    //       console.log("go back login!");
+    //      $location.url('/login');
+    //  }
+    // });
   });
 })
 
@@ -44,12 +45,14 @@ angular.module('starter', ['ionic', 'ngCordova','starter.controllers', 'ngResour
         controller: 'LoginCtrl',
         data: {auth: ''}
     })
+  
     .state('buyertab', {
       url: '/buyertab',
       abstract: true,
       templateUrl: 'templates/buyertabs.html',
       data: {auth: 'requireLogin'}
     })
+  
     .state('shoppertab', {
       url: '/shoppertab',
       abstract: true,
@@ -77,15 +80,17 @@ angular.module('starter', ['ionic', 'ngCordova','starter.controllers', 'ngResour
           }
         }
       })
-      .state('buyertab.rules', {
-        url: '/rules',
+
+    .state('buyertab.shop', {
+        url: '/shop',
         views: {
-          'tab-rules': {
-            templateUrl: 'templates/tab-rules.html',
-            controller: 'RulesCtrl'
+          'tab-shop': {
+            templateUrl: 'templates/tab-shop.html',
+            controller: 'ShopCtrl'
           }
         }
       })
+  
       .state('shoppertab.home', {
         url: '/home',
         views: {
@@ -95,15 +100,7 @@ angular.module('starter', ['ionic', 'ngCordova','starter.controllers', 'ngResour
           }
         }
       })  
-      .state('shoppertab.shop', {
-        url: '/shop',
-        views: {
-          'tab-shop': {
-            templateUrl: 'templates/tab-shop.html',
-            controller: 'ShopCtrl'
-          }
-        }
-      })
+
       .state('shoppertab.rules', {
         url: '/rules',
         views: {
@@ -113,6 +110,7 @@ angular.module('starter', ['ionic', 'ngCordova','starter.controllers', 'ngResour
           }
         }
       })
+  
       .state('shoppertab.inventory', {
         url: '/inventory',
         views: {
