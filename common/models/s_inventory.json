@@ -7,24 +7,15 @@
     "validateUpsert": true
   },
   "properties": {
-    "item": {
-      "type": "Schema.Types.ObjectId",
-      "ref": "s_itemList",
+    "title": {
+      "type": "string",
       "required": true
     },
-    "shopper": {
-      "type": "Schema.Types.ObjectId",
-      "ref": "authenticate",
-      "required": true
+    "description": {
+      "type": "string",
+      "required": false
     },
-    "amount": {
-      "type": "number",
-      "required": true
-    },
-    "price": {
-      "type": "number",
-      "required": true
-    }
+    "shopper": [{ }]
   },
   "validations": [],
   "relations": {},

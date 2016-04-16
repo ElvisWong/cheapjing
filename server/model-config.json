@@ -48,14 +48,6 @@
     "dataSource": "cheapjingDS",
     "public": true
   },
-  "s_itemList": {
-    "dataSource": "cheapjingDS",
-    "public": true
-  },
-  "s_promoteItemList": {
-    "dataSource": "cheapjingDS",
-    "public": true
-  },
   "transaction": {
     "dataSource": "cheapjingDS",
     "public": true

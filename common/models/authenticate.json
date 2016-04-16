@@ -44,10 +44,8 @@
       "type": "Date",
       "required": true
     },
-    "lastUpdated": {
-      "type": "Date",
-      "required": true
-    }
+    "wishList": [{ }],
+    "inventoryList": [{ }]
   },
   "validations": [],
   "relations": {},
