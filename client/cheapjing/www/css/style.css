@@ -1,1 +1,4 @@
 /* Empty. Add your own CSS if you like */
+ion-item:hover{
+	background-color: rgba(100,100,100, 1.0);
+}
