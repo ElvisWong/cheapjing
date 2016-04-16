@@ -13,6 +13,9 @@
       "./mixins"
     ]
   },
+  "User": {
+    "dataSource": "db"
+  },
   "ACL": {
     "dataSource": "db",
     "public": false
