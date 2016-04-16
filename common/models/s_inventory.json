@@ -1,23 +1,20 @@
 {
-  "name": "s_inventory",
-  "plural": "s_inventory",
+  "name": "Inventory",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "item": {
-      "type": "Schema.Types.ObjectId",
-      "ref": "s_itemList",
+    "title": {
+      "type": "string",
       "required": true
     },
-    "shopper": {
-      "type": "Schema.Types.ObjectId",
-      "ref": "authenticate",
-      "required": true
+    "description": {
+      "type": "string",
+      "required": false
     },
-    "amount": {
+    "quantity": {
       "type": "number",
       "required": true
     },
@@ -27,7 +24,13 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "shopper": {
+      "type": "belongsTo",
+      "model": "authenticate",
+      "foreignKey": "memberId"
+    }
+  },
   "acls": [],
   "methods": {}
 }
