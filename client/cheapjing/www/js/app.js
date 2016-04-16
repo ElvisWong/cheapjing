@@ -30,6 +30,32 @@ angular.module('starter', ['ionic', 'ionic.service.core', 'ngCordova','starter.c
   });
 })
 
+.factory('Loading', function () {
+
+    $loading = {};
+    $loading.show = function ($ionicLoading) {
+        $ionicLoading.show({
+            animation: 'fade-in',
+            showBackdrop: true,
+            maxWidth: 200,
+            showDelay: 0
+        });
+    }
+
+    $loading.hide = function ($ionicLoading) {
+        $ionicLoading.hide();
+    }
+
+    return $loading;
+})
+
+.run(function ($ionicPlatform, $rootScope, $ionicPopup, $ionicSideMenuDelegate) {
+
+    $rootScope.isInternetConnected = function () {
+        return (navigator.connection.type == Connection.NONE) ? false : true;
+    };
+})
+
 .config(function($stateProvider, $urlRouterProvider) {
 
   // Ionic uses AngularUI Router which uses the concept of states
@@ -40,7 +66,7 @@ angular.module('starter', ['ionic', 'ionic.service.core', 'ngCordova','starter.c
   
   // setup an abstract state for the tabs directive
     .state('login', {
-        url: "/login",
+        url: '/login',
         templateUrl: "templates/login.html",
         controller: 'AppCtrl',
         data: {auth: ''}
@@ -48,6 +74,7 @@ angular.module('starter', ['ionic', 'ionic.service.core', 'ngCordova','starter.c
   
     .state('menu', {
       url: '/menu',
+      abstract: true,
       templateUrl: 'templates/menu.html',
       controller: 'AppCtrl'
     })
@@ -56,6 +83,18 @@ angular.module('starter', ['ionic', 'ionic.service.core', 'ngCordova','starter.c
       url: '/google_map',
       templateUrl: 'templates/google_map.html',
       controller: 'googlemapCtrl'
+    })
+  
+    .state('whitelist_item', {
+      url: '/whitelist_item',
+      templateUrl: 'templates/whitelist_item.html',
+      controller: 'whitelistItemCtrl'
+    })
+  
+    .state('signup', {
+      url: '/signup',
+      templateUrl: 'templates/signup.html',
+      controller: 'signupCtrl'
     })
   
     .state('buyertab', {

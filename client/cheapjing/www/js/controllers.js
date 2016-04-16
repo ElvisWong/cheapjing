@@ -95,7 +95,17 @@ angular.module('starter.controllers', [])
     };
 })
 
-.controller('AppCtrl', function($scope, $rootScope, $state, Member) {
+.controller('whitelistItemCtrl', function($scope, $rootScope, $state) {
+    
+    $scope.card = {};
+    $scope.card.isWhitelistDetails = true;
+})
+
+.controller('signupCtrl', function($scope, $rootScope, $state){
+    
+})
+
+.controller('AppCtrl', function($scope, $rootScope, $state, Member, $ionicPopup, Loading, $ionicLoading) {
 
 	$rootScope.user = {};
 
@@ -108,6 +118,12 @@ angular.module('starter.controllers', [])
     $scope.input.where = {};
     $scope.input.where.email = 'abc@abc.com';
     $scope.input.where.password = '123456';
+    
+    $rootScope.internetPopupLock = false;
+
+    $scope.toSignup = function() {
+        $state.go('signup');
+    }
 
     function login() {
 		$scope.getUser();
@@ -119,8 +135,13 @@ angular.module('starter.controllers', [])
     }
     
 	function getUser() {
-        
+        if(!$rootScope.isInternetConnected()){
+            $rootScope.alertInternetDisconnected();
+        };
+        //$state.go('buyertab.home');
+        Loading.show($ionicLoading);
 		Member.findOne(JSON.stringify($scope.input), function(user) {
+            Loading.hide($ionicLoading);
 			console.log("user: ", user);
             $rootScope.user = user;
             //alert(user.userType);
@@ -136,8 +157,24 @@ angular.module('starter.controllers', [])
 		}, function(e) {
 			alert(JSON.stringify(e));
 		});
-	};
 
+    };
+
+    $rootScope.alertInternetDisconnected = function () {
+        if (!$rootScope.internetPopupLock) {
+            $rootScope.internetPopupLock = true;
+            //alert($rootScope.language);
+            $ionicPopup.confirm({
+                title: 'Connection Status',
+                content: 'Internect Connection Failure',
+                cancelText: 'Cancel',
+                okText: 'OK'
+            }).then(function (response) {
+                $rootScope.internetPopupLock = false;
+            });
+        }
+    };
+    
 })
 
 .controller('HomeCtrl', function($scope, $rootScope, $ionicPopup, $state) {
@@ -167,7 +204,7 @@ angular.module('starter.controllers', [])
     }
     
     $scope.popupProfilePicture = function () {
-        alert('$scope.popupProfilePicture()');
+        //alert('$scope.popupProfilePicture()');
         $template = '<img style="width:100%;" src="img/max.png"><br><b>' + $rootScope.user.name + '</b>'
         $ionicPopup.alert({
             title: '<i class="icon icon-fa-info-circle"></i> ProfilePicture',
@@ -222,12 +259,9 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('WishlistCtrl', function($scope, $ionicPopup, Itemlist ,Wishlist) {
-
-
+.controller('WishlistCtrl', function($scope, $ionicPopup, Itemlist ,Wishlist, $state) {
 	$scope.items = [];
 	$scope.global_items = [];
-
 	
 	activate();
 
@@ -237,7 +271,11 @@ angular.module('starter.controllers', [])
 		$scope.global_items = Itemlist.all();
 	}
 
-
+    $scope.toWhitelistItem =  function(item) {
+        $rootScope.items = item;
+        $state.go('whitelist_item');
+    }
+    
 	$scope.onclick_global_itemlist = function (index) {
 		$scope.items.push({
 			id: $scope.global_items[index].id,

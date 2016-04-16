@@ -1,0 +1,36 @@
+<ion-view view-title="SignUp" hide-nav-bar="false" hide-back-button="false" can-swipe-back="false">
+    <ion-nav-back-button></ion-nav-back-button>
+    <ion-nav-buttons side="right"> 
+        <button class="button button-icon button-clear icon-fa-cog-16" menu-toggle="right"></button>        
+    </ion-nav-buttons>     
+    <ion-content padding="true" overflow-scroll="true" class="has-header">
+        <div class="spacer" style="height: 25px;"></div>        
+        <div class="content">
+            <div class="app-icon"></div>
+            <h2 style="text-align: center">Cheap<span style="color:red">Jing</span></h2>
+        </div>  
+        <div class="spacer" style="height: 20px;"></div>
+        <label class="item item-input white-input-field">
+            <span class="input-label"><i class="icon icon-fa-user input"></i></span>
+            <input type="text" placeholder="Username" ng-model="input.name" maxlength="20" required>
+        </label>
+        <div class="spacer" style="height: 10px;"></div>          
+        <label class="item item-input white-input-field">
+            <span class="input-label"><i class="icon icon-fa-email input"></i></span>
+            <input type="email" placeholder="Email" ng-model="input.email" maxlength="50" required>
+        </label>
+        <div class="spacer" style="height: 10px;"></div>                   
+        <label class="item item-input white-input-field">
+            <span class="input-label"><i class="icon icon-fa-key input"></i></span>
+            <input type="password" placeholder="Password" ng-model="input.password" maxlength="20" required>
+        </label>
+        <div class="spacer" style="height: 10px;"></div>                   
+        <label class="item item-input white-input-field">
+            <span class="input-label"><i class="icon icon-fa-key input"></i></span>
+            <input type="password" placeholder="Confirm Password" ng-model="input.confirm_password" maxlength="20" required>
+        </label>
+        <div class="spacer" style="height: 10px;"></div>
+        <button class="button button-block button-assertive icon-left icon-fa-pencil-square-o" type="submit" ng-click="signup()" ng-disabled="!(input.user_email && input.user_name && input.user_password && input.confirm_password && (input.password == input.confirm_password))">Submit</button>
+        <div class="spacer" style="height: 40px;"></div>
+    </ion-content>
+</ion-view>

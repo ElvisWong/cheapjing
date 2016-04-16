@@ -22,7 +22,9 @@
                 </label>
             </ion-list>
             <div class="spacer" style="height: 20px;"></div>
-            <button ng-click="login()" ng-disabled="!(input.where.email && input.where.password)" class="button button-block button-assertive icon-left icon-fa-sign-in" type="submit">Login</button>
+            <button ng-click="login()" ng-disabled="!(input.where.email && input.where.password)" class="button button-block button-stable icon-left icon-fa-sign-in" type="submit">Login</button>
+            <button ng-click="toSignup()" class="button button-block button-assertive icon-left icon-fa-pencil-square-o">SignUp</button>
+            <button class="button button-block button-clear">Forget Password</button>
         </form>        
     </ion-content>
 </ion-view>
