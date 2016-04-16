@@ -2,7 +2,14 @@ angular.module('starter.controllers', [])
 .controller('AppCtrl', function($scope) {
 
 })
-.controller('LoginCtrl', function($scope) {})
+.controller('LoginCtrl', function($scope, $state) {
+
+    $scope.onClickLogin = function(){
+        $state.go('shoppertab');
+    }
+
+
+})
 .controller('HomeCtrl', function($scope, Authenticate) {
 
 	$scope.user = { };
@@ -17,7 +24,7 @@ angular.module('starter.controllers', [])
 		$scope.getUser();
 	};
 	function getUser(username) {
-		Authenticate.findOne({}, function(user) {
+		Authenticate.findOne(JSON.stringify({id:1}), function(user) {
 			console.log("user: ", user);
 		}, function(e) {
 			console.log(e);
