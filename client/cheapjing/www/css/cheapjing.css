@@ -54,7 +54,7 @@ p.info {
   color: #164d2b;
 }
 
-#profile_google_map, #acesome_google_map {
+#google_map {
     width: 100%;
     height: 300px;
     background-color: #CCC;
@@ -66,6 +66,16 @@ p.info {
     background-color: #CCC;
 }
 
+.profile-pic {
+    background-color: #fff;
+    background-size: cover;
+    border-radius: 50%;
+    height: 150px;
+    margin: 0 auto;
+    width: 150px;
+    box-shadow: 0 2px 5px 0 #888888 !important;     
+}
+
 .controls {
     border: 1px solid transparent;
     border-radius: 2px 0 0 2px;
@@ -74,6 +84,28 @@ p.info {
     line-height: 22px;
     background-color: #fff;
 }
+
+#pac-input {
+    background-color: #fff;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+    width: 100%;
+    margin-bottom: 0;
+    line-height: 25px;
+    font-weight: bold;
+}
+
+#pac-input:focus {
+    border-color: #4d90fe;
+}
+
+.pac-container {
+    font-family: Roboto;
+}
+
 
 #type-selector {
     color: #fff;
@@ -115,7 +147,6 @@ ion-item:hover {
 .white-input-field {
     background: white
 }
-
 
 .no-margin {
   margin: 0 !important;
@@ -227,6 +258,1463 @@ ion-item:hover {
     content: "\f090";
     font-size: 22px;
     vertical-align: middle, text-bottom;
+}
+
+.float-button {
+background-color:#ef2a10;
+opacity: 0.9;
+color: white;
+border-radius: 50%;
+/*border-radius:15% 0 0 0;*/
+width: 30px;
+padding: 25px;
+font-size: 40px;
+position: fixed;
+bottom: 5%; /* Adjust height */
+right: 5%; /* Adjust position */
+z-index: 1000;
+box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26) !important;    
+}
+
+.float-button:hover {
+    -webkit-transform: translate3d(0, -1px, 0) !important;
+    transform: translate3d(0, -1px, 0) !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4) !important;
+    background: #f28476 !important;
+}
+
+.float-button .height_fix {
+  margin-top: 100%;
+  border: 1px solid red;
+}
+
+.float-button .content {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  margin-top: -14px;
+  color: white;
+}
+
+.no-margin {
+  margin: 0 !important;
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+progress[value] {
+  color: #0063a6;
+  font-size: .6em;
+  line-height: 1.5em;
+  text-indent: .5em;
+  height: 1.8em;
+  border: 1px solid #0063a6;
+  background: #fff;
+}
+
+@-webkit-keyframes animate-stripes {
+   100% { background-position: -100px 0px; }
+}
+
+@keyframes animate-stripes {
+   100% { background-position: -100px 0px; }
+}
+
+progress[value]::-webkit-progress-bar {
+  background-color: #eee;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+
+progress[value]::-webkit-progress-value {
+  background-image:
+	   -webkit-linear-gradient(-45deg, 
+	                           transparent 33%, rgba(0, 0, 0, .1) 33%, 
+	                           rgba(0,0, 0, .1) 66%, transparent 66%),
+	   -webkit-linear-gradient(top, 
+	                           rgba(255, 255, 255, .25), 
+	                           rgba(0, 0, 0, .25)),
+	   -webkit-linear-gradient(left, #0F3, #0F3);
+
+    border-radius: 2px; 
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+}
+
+progress[value]::-webkit-progress-value::before {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+progress[value]::-webkit-progress-value::after {
+  width: 6px;
+  height: 6px;
+  position: absolute;
+  border-radius: 100%;
+  right: 7px;
+  top: 7px;
+  background-color: white;
+}
+
+.input-label {
+  display: table;
+  padding: 7px 10px 7px 0px !important;
+  max-width: 200px;
+  width: 15% !important;
+  color: #444;
+  font-size: 16px; 
+}
+
+.fa {
+    display
+    : inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.fa-fw {
+    width: 1.28571429em;
+    text-align: center;
+}
+
+.icon-fa-list-ol:before {
+    font-family: "fontawesome";
+    content: "\f0cb";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-trash:before {
+    font-family: "fontawesome";
+    content: "\f1f8";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-refresh:before {
+    font-family: "fontawesome";
+    content: "\f021";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-filter:before {
+    font-family: "fontawesome";
+    content: "\f0b0";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-caret-up:before {
+    font-family: "fontawesome";
+    content: "\f0d8";
+    font-size: 22px;
+    color: black;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-caret-down:before {
+    font-family: "fontawesome";
+    content: "\f0d7";
+    font-size: 22px;
+    color: black;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-caret-right:before {
+    font-family: "fontawesome";
+    content: "\f0da";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-line-chart-o-22:before {
+    font-family: "fontawesome";
+    content: "\f201";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-tab-fa-line-chart-o:before {
+    padding-top: 5px;
+    font-family: "fontawesome";
+    content: "\f201";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+    width: 1.28571429em;
+    text-align: center;    
+}
+
+.icon-fa-hospital-o-22:before {
+    font-family: "fontawesome";
+    content: "\f0f8";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-file-image-22:before {
+    font-family: "fontawesome";
+    content: "\f1c5";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-camera-22:before {
+    font-family: "fontawesome";
+    content: "\f030";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-search-22:before {
+    font-family: "fontawesome";
+    content: "\f002";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-search-16:before {
+    font-family: "fontawesome";
+    content: "\f002";
+    font-size: 16px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-cog:before {
+    font-family: "fontawesome";
+    content: "\f013";
+    font-size: 18px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-cog-16:before {
+    font-family: "fontawesome";
+    content: "\f013";
+    font-size: 16px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-check-sm:before {
+    font-family: "fontawesome";
+    content: "\f00c";
+    font-size: 18px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-exclamation-circle-sm:before {
+    font-family: "fontawesome";
+    content: "\f06a";
+    font-size: 18px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-times-sm:before {
+    font-family: "fontawesome";
+    content: "\f00d";
+    font-size: 18px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-link-vsmall:before {
+    font-family: "fontawesome";
+    content: "\f0c1";
+    font-size: 15px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-link-22:before {
+    font-family: "fontawesome";
+    content: "\f0c1";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-minus:before {
+    font-family: "fontawesome";
+    content: "\f068";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-exclamation-circle:before {
+    font-family: "fontawesome";
+    content: "\f06a";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-eye:before {
+    font-family: "fontawesome";
+    content: "\f06e";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-share:before {
+    font-family: "fontawesome";
+    content: "\f064";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-share-alt:before {
+    font-family: "fontawesome";
+    content: "\f1e0";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-tab-fa-share-alt:before {
+    padding-top: 5px;
+    font-family: "fontawesome";
+    content: "\f1e0";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+    width: 1.28571429em;
+    text-align: center;    
+}
+
+.icon-fa-share-alt-16:before {
+    font-family: "fontawesome";
+    content: "\f1e0";
+    font-size: 16px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-times:before {
+    font-family: "fontawesome";
+    content: "\f00d";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-check:before {
+    font-family: "fontawesome";
+    content: "\f00c";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-bell:before {
+    font-family: "fontawesome";
+    content: "\f0f3";
+    font-size: 18px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-dashboard:before {
+    font-family: "fontawesome";
+    content: "\f0e4";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-tab-fa-dashboard:before {
+    padding-top: 5px;    
+    font-family: "fontawesome";
+    content: "\f0e4";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+    width: 1.28571429em;
+    text-align: center;    
+}
+
+.icon-tab-fa-home:before {
+    padding-top: 5px;    
+    font-family: "fontawesome";
+    content: "\f015";
+    font-size: 24px;
+    vertical-align: middle, text-bottom;
+    width: 1.28571429em;
+    text-align: center;    
+}
+
+.icon-fa-bullhorn:before {
+    font-family: "fontawesome";
+    content: "\f0a1";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-rocket:before {
+    font-family: "fontawesome";
+    content: "\f135";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-globe:before {
+    font-family: "fontawesome";
+    content: "\f0ac";
+    font-size: 16px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-globe-22:before {
+    font-family: "fontawesome";
+    content: "\f0ac";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-volume-up-22:before {
+    font-family: "fontawesome";
+    content: "\f028";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-volume-off-22:before {
+    font-family: "fontawesome";
+    content: "\f026";
+    font-size: 22px;
+    vertical-align: middle, text-bottom; 
+}
+
+.icon-fa-shopping-basket-22:before {
+    font-family: "fontawesome";
+    content: "\f291";
+    font-size: 20px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-lock-24:before {
+    font-family: "fontawesome";
+    content: "\f023";
+    font-size: 24px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-unlock-alt-24:before {
+    font-family: "fontawesome";
+    content: "\f13e";
+    font-size: 24px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-bell-slash-o-22:before {
+    font-family: "fontawesome";
+    content: "\f1f7";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-bell-o-22:before {
+    font-family: "fontawesome";
+    content: "\f0a2";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-cloud-download:before {
+    font-family: "fontawesome";
+    content: "\f0ed";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-check-circle:before {
+    font-family: "fontawesome";
+    content: "\f058";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-cloud-upload:before {
+    font-family: "fontawesome";
+    content: "\f0ee";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-sign-in:before {
+    font-family: "fontawesome";
+    content: "\f090";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-sign-out:before {
+    font-family: "fontawesome";
+    content: "\f08b";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-wheelchair:before {
+    font-family: "fontawesome";
+    content: "\f193";
+    font-size: 22px;
+    color: #189d4b;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-wheelchair-22:before {
+    font-family: "fontawesome";
+    content: "\f193";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-wheelchair-30:before {
+    font-family: "fontawesome";
+    content: "\f193";
+    font-size: 30px;
+    color: #189d4b;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-wheelchair-80:before {
+    font-family: "fontawesome";
+    content: "\f193";
+    font-size: 80px;
+    vertical-align: bottom, text-bottom;
+}
+
+.icon-fa-info-circle-22:before {
+    font-family: "fontawesome";
+    content: "\f05a";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-paper-plane-o-20:before {
+    font-family: "fontawesome";
+    content: "\f1d9";
+    font-size: 20px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-paper-plane-o-22:before {
+    font-family: "fontawesome";
+    content: "\f1d9";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-question-circle-22:before {
+    font-family: "fontawesome";
+    content: "\f059";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-info-circle:before {
+    font-family: "fontawesome";
+    content: "\f05a";
+    font-size: 18px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-exclamation-triangle:before {
+    font-family: "fontawesome";
+    content: "\f071";
+    font-size: 18px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-life-ring:before {
+    font-family: "fontawesome";
+    content: "\f1cd";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-gavel:before {
+    font-family: "fontawesome";
+    content: "\f0e3";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-pencil-square-o:before {
+    font-family: "fontawesome";
+    content: "\f044";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-forward:before {
+    font-family: "fontawesome";
+    content: "\f04e";
+    font-size: 20px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-globe-blue:before {
+    font-family: "fontawesome";
+    content: "\f0ac";
+    font-size: 22px;
+    color: blue;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-globe-acesobee:before {
+    font-family: "fontawesome";
+    content: "\f0ac";
+    font-size: 22px;
+    color: #FFA500;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-facebook-official:before {
+    font-family: "fontawesome";
+    content: "\f230";
+    font-size: 22px;
+    color: #3B5998;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-facebook-white:before {
+    font-family: "fontawesome";
+    content: "\f230";
+    font-size: 22px;
+    color: white;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-linkedin:before {
+    font-family: "fontawesome";
+    content: "\f0e1";
+    font-size: 22px;
+    color: #007bb5;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-twitter:before {
+    font-family: "fontawesome";
+    content: "\f099";
+    font-size: 22px;
+    color: #00aced;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-youtube-play:before {
+    font-family: "fontawesome";
+    content: "\f16a";
+    font-size: 22px;
+    color: #bb0000;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-instagram:before {
+    font-family: "fontawesome";
+    content: "\f16d";
+    font-size: 22px;
+    color: #125688;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-eye-slash:before {
+    font-family: "fontawesome";
+    content: "\f070";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-bug:before {
+    font-family: "fontawesome";
+    content: "\f188";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-email:before {
+    font-family: "fontawesome";
+    content: "\f0e0";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-plus-circle:before {
+    font-family: "fontawesome";
+    content: "\f055";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-minus-circle:before {
+    font-family: "fontawesome";
+    content: "\f056";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-email-22:before {
+    font-family: "fontawesome";
+    content: "\f0e0";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-user-22:before {
+    font-family: "fontawesome";
+    content: "\f007";
+    font-size: 25px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-phone-22:before {
+    font-family: "fontawesome";
+    content: "\f095";
+    font-size: 25px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-birthday-cake-22:before {
+    font-family: "fontawesome";
+    content: "\f1fd";
+    font-size: 25px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-map-signs:before {
+    font-family: "fontawesome";
+    content: "\f277";
+    font-size: 25px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-compass:before {
+    font-family: "fontawesome";
+    content: "\f14e";
+    font-size: 25px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-map-marker:before {
+    font-family: "fontawesome";
+    content: "\f041";
+    font-size: 25px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-mars-22:before {
+    font-family: "fontawesome";
+    content: "\f222";
+    font-size: 15px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-venus-22:before {
+    font-family: "fontawesome";
+    content: "\f221";
+    font-size: 15px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-user-small:before {
+    font-family: "fontawesome";
+    content: "\f007";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-user:before {
+    font-family: "fontawesome";
+    content: "\f007";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-user-18:before {
+    font-family: "fontawesome";
+    content: "\f007";
+    font-size: 18px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-ticket:before {
+    font-family: "fontawesome";
+    content: "\f145";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-key:before {
+    font-family: "fontawesome";
+    content: "\f084";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-key-30:before {
+    font-family: "fontawesome";
+    content: "\f084";
+    font-size: 30px;
+    color: #ff0000;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-stethoscope:before {
+    font-family: "fontawesome";
+    content: "\f0f1";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-tab-fa-stethoscope:before {
+    padding-top: 5px;    
+    font-family: "fontawesome";
+    content: "\f0f1";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+    width: 1.28571429em;
+    text-align: center;    
+}
+
+.icon-fa-calendar-o:before {
+    font-family: "fontawesome";
+    content: "\f133";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-clock-o-small:before {
+    font-family: "fontawesome";
+    content: "\f017";
+    font-size: 16px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-clock-o:before {
+    font-family: "fontawesome";
+    content: "\f017";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-map-marker:before {
+    font-family: "fontawesome";
+    content: "\f041";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-list:before {
+    font-family: "fontawesome";
+    content: "\f03a";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-tab-fa-list:before {
+    padding-top: 5px;
+    font-family: "fontawesome";
+    content: "\f03a";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+    width: 1.28571429em;
+    text-align: center;    
+}
+
+.icon-tab-fa-tasks:before {
+    padding-top: 5px;    
+    font-family: "fontawesome";
+    content: "\f0ae";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+    width: 1.28571429em;
+    text-align: center;
+}
+
+.icon-fa-list-16:before {
+    font-family: "fontawesome";
+    content: "\f03a";
+    font-size: 16px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-medkit:before {
+    font-family: "fontawesome";
+    content: "\f0fa";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-medkit-16:before {
+    font-family: "fontawesome";
+    content: "\f0fa";
+    font-size: 16px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-ban-16:before {
+    font-family: "fontawesome";
+    content: "\f05e";
+    font-size: 16px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-calendar:before {
+    font-family: "fontawesome";
+    content: "\f073";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-user-md:before {
+    font-family: "fontawesome";
+    content: "\f0f0";
+    font-size: 22px;
+    color: #4aa0f4;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-user-md-22:before {
+    font-family: "fontawesome";
+    content: "\f0f0";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-user-md-30:before {
+    font-family: "fontawesome";
+    content: "\f0f0";
+    font-size: 30px;
+    vertical-align: bottom, text-bottom;
+}
+
+.icon-fa-user-md-80:before {
+    font-family: "fontawesome";
+    content: "\f0f0";
+    font-size: 80px;
+    vertical-align: bottom, text-bottom;
+}
+
+.icon-fa-flask:before {
+    font-family: "fontawesome";
+    content: "\f0c3";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-dollar:before {
+    font-family: "fontawesome";
+    content: "\f155";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-folder-open-o-16:before {
+    font-family: "fontawesome";
+    content: "\f115";
+    font-size: 16px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-folder-open-o:before {
+    font-family: "fontawesome";
+    content: "\f115";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-tab-fa-folder-open-o:before {
+    padding-top: 5px;
+    font-family: "fontawesome";
+    content: "\f115";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+    width: 1.28571429em;
+    text-align: center;    
+}
+
+.icon-fa-file-o-22:before {
+    font-family: "fontawesome";
+    content: "\f016";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-files-o-22:before {
+    font-family: "fontawesome";
+    content: "\f0c5";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-file-text-o:before {
+    font-family: "fontawesome";
+    content: "\f0f6";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-thumbs-o-up:before {
+    font-family: "fontawesome";
+    content: "\f087";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-lock:before {
+    font-family: "fontawesome";
+    content: "\f023";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-heart:before {
+    font-family: "fontawesome";
+    content: "\f004";
+    font-size: 22px;
+    color: red;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-chevron-circle-left:before {
+    font-family: "fontawesome";
+    content: "\f137";
+    font-size: 80px;
+    color: darkgreen;
+    vertical-align: middle;
+}
+
+.icon-fa-chevron-circle-right:before {
+    font-family: "fontawesome";
+    content: "\f138";
+    font-size: 80px;
+    color: darkgreen;
+    vertical-align: middle;
+}
+
+.icon-fa-qrcode:before {
+    font-family: "fontawesome";
+    content: "\f029";
+    font-size: 30px;
+    color: red;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-file-image:before {
+    font-family: "fontawesome";
+    content: "\f1c5";
+    font-size: 30px;
+    color: limegreen;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-qrcode-22:before {
+    font-family: "fontawesome";
+    content: "\f029";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-qrcode-26:before {
+    font-family: "fontawesome";
+    content: "\f029";
+    font-size: 26px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-male:before {
+    font-family: "fontawesome";
+    content: "\f183";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-female:before {
+    font-family: "fontawesome";
+    content: "\f182";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-star-o:before {
+    font-family: "fontawesome";
+    content: "\f006";
+    font-size: 16px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-sun-o:before {
+    font-family: "fontawesome";
+    content: "\f185";
+    font-size: 16px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-moon-o:before {
+    font-family: "fontawesome";
+    content: "\f186";
+    font-size: 16px;
+    vertical-align: middle, text-bottom;
+}
+
+.icon-fa-list-codeclass:before {
+    font-family: "fontawesome";
+    content: "\f03a";
+    font-size: 28px;
+    vertical-align: bottom;
+    color: #3f3f3f;
+}
+
+.icon-fa-medkit-codeclass:before {
+    font-family: "fontawesome";
+    content: "\f0fa";
+    font-size: 28px;
+    vertical-align: bottom;
+    color: #5b79f8;
+}
+
+.icon-fa-cutlery-codeclass:before {
+    font-family: "fontawesome";
+    content: "\f0f5";
+    font-size: 28px;
+    vertical-align: bottom;
+    color: #189d4b;    
+}
+
+.icon-fa-cutlery-codeclass-16:before {
+    font-family: "fontawesome";
+    content: "\f0f5";
+    font-size: 16px;
+    vertical-align: bottom;
+}
+
+.icon-fa-child-codeclass:before {
+    font-family: "fontawesome";
+    content: "\f1ae";
+    font-size: 28px;
+    vertical-align: bottom;
+    color: #f4b3d8;     
+}
+
+.icon-fa-users-codeclass-16:before {
+    font-family: "fontawesome";
+    content: "\f0c0";
+    font-size: 16px;
+    vertical-align: bottom;
+}
+
+.icon-fa-users-codeclass:before {
+    font-family: "fontawesome";
+    content: "\f0c0";
+    font-size: 28px;
+    vertical-align: bottom;
+    color: #faa046;  
+}
+
+.icon-fa-child-codeclass-16:before {
+    font-family: "fontawesome";
+    content: "\f1ae";
+    font-size: 16px;
+    vertical-align: bottom;
+}
+
+.icon-fa-bicycle-codeclass:before {
+    font-family: "fontawesome";
+    content: "\f206";
+    font-size: 28px;
+    vertical-align: bottom;
+    color: #faa046;     
+}
+
+.icon-fa-film-codeclass-16:before {
+    font-family: "fontawesome";
+    content: "\f008";
+    font-size: 16px;
+    vertical-align: bottom;  
+}
+
+.icon-fa-film-codeclass:before {
+    font-family: "fontawesome";
+    content: "\f008";
+    font-size: 28px;
+    vertical-align: bottom;
+    color: #faa046;     
+}
+
+.icon-fa-bicycle-codeclass-16:before {
+    font-family: "fontawesome";
+    content: "\f206";
+    font-size: 16px;
+    vertical-align: bottom;
+}
+
+.icon-fa-life-ring-codeclass:before {
+    font-family: "fontawesome";
+    content: "\f1cd";
+    font-size: 28px;
+    vertical-align: bottom;
+    color: #faa046;     
+}
+
+.icon-fa-life-ring-codeclass-16:before {
+    font-family: "fontawesome";
+    content: "\f1cd";
+    font-size: 16px;
+    vertical-align: bottom;
+}
+
+.icon-fa-stethoscope-codeclass:before {
+    font-family: "fontawesome";
+    content: "\f0f1";
+    font-size: 28px;
+    vertical-align: bottom;
+    color: #5b79f8;    
+}
+
+.icon-fa-stethoscope-codeclass-16:before {
+    font-family: "fontawesome";
+    content: "\f0f1";
+    font-size: 16px;
+    vertical-align: bottom;
+}
+
+.icon-fa-flask-codeclass:before {
+    font-family: "fontawesome";
+    content: "\f0c3";
+    font-size: 28px;
+    vertical-align: bottom;
+    color: #5b79f8;    
+}
+
+.icon-fa-flask-codeclass-16:before {
+    font-family: "fontawesome";
+    content: "\f0c3";
+    font-size: 16px;
+    vertical-align: bottom;
+}
+
+.icon-fa-wheelchair-codeclass:before {
+    font-family: "fontawesome";
+    content: "\f193";
+    font-size: 28px;
+    vertical-align: bottom;
+    color: #5b79f8;
+}
+
+.icon-fa-wheelchair-codeclass-16:before {
+    font-family: "fontawesome";
+    content: "\f193";
+    font-size: 16px;
+    vertical-align: bottom;
+}
+
+.icon-fa-eyedropper-codeclass:before {
+    font-family: "fontawesome";
+    content: "\f1fb";
+    font-size: 28px;
+    vertical-align: bottom;
+    color: #5b79f8;    
+}
+
+.icon-fa-eyedropper-codeclass-16:before {
+    font-family: "fontawesome";
+    content: "\f1fb";
+    font-size: 16px;
+    vertical-align: bottom;
+}
+
+.icon-fa-heartbeat-codeclass:before {
+    font-family: "fontawesome";
+    content: "\f21e";
+    font-size: 28px;
+    vertical-align: bottom;
+    color: #5b79f8;    
+}
+
+.icon-fa-heartbeat-codeclass-16:before {
+    font-family: "fontawesome";
+    content: "\f21e";
+    font-size: 16px;
+    vertical-align: bottom;
+}
+
+.icon-fa-plus-square:before {
+    font-family: "fontawesome";
+    content: "\f0fe";
+    font-size: 18px;
+    vertical-align: bottom;
+}
+
+.icon-fa-minus-square:before {
+    font-family: "fontawesome";
+    content: "\f146";
+    font-size: 18px;
+    vertical-align: bottom;
+}
+
+.icon-fa-angle-double-down:before {
+    font-family: "fontawesome";
+    content: "\f103";
+    font-size: 18px;
+    vertical-align: bottom;
+}
+
+.icon-fa-commenting-22:before {
+    font-family: "fontawesome";
+    content: "\f27a";
+    font-size: 22px;
+    vertical-align: bottom;
+}
+
+.icon-fa-comments-o-22:before {
+    font-family: "fontawesome";
+    content: "\f0e6";
+    font-size: 22px;
+    vertical-align: bottom;
+}
+
+.icon-fa-star-22:before {
+    font-family: "fontawesome";
+    content: "\f005";
+    font-size: 22px;
+    vertical-align: bottom;
+    color:#ffd700;
+}
+
+.icon-fa-calendar-check-o-22:before {
+    font-family: "fontawesome";
+    content: "\f274";
+    font-size: 22px;
+    vertical-align: bottom;
+}
+
+.icon-fa-calendar-times-o-22:before {
+    font-family: "fontawesome";
+    content: "\f273";
+    font-size: 22px;
+    vertical-align: bottom;
+}
+
+.icon-fa-repeat-22:before {
+    font-family: "fontawesome";
+    content: "\f01e";
+    font-size: 22px;
+    vertical-align: bottom;
+}
+
+.icon-fa-tint-22:before {
+    font-family: "fontawesome";
+    content: "\f043";
+    font-size: 25px;
+    vertical-align: bottom;
+}
+
+.icon-fa-money-22:before {
+    font-family: "fontawesome";
+    content: "\f0d6";
+    font-size: 22px;
+    vertical-align: bottom;
+}
+
+.icon-fa-bookmark-22:before {
+    font-family: "fontawesome";
+    content: "\f02e";
+    font-size: 22px;
+    vertical-align: bottom;
+}
+
+.icon-fa-undo-22:before {
+    font-family: "fontawesome";
+    content: "\f0e2";
+    font-size: 22px;
+    vertical-align: bottom;
+}
+
+.icon-fa-balance-scale-22:before {
+    font-family: "fontawesome";
+    content: "\f24e";
+    font-size: 22px;
+    vertical-align: bottom;
+}
+
+.icon-fa-calculator-22:before {
+    font-family: "fontawesome";
+    content: "\f1ec";
+    font-size: 22px;
+    vertical-align: bottom;
+}
+
+.icon-fa-table-22:before {
+    font-family: "fontawesome";
+    content: "\f0ce";
+    font-size: 22px;
+    vertical-align: bottom;    
+}
+
+.icon-fa-tags-22:before {
+    font-family: "fontawesome";
+    content: "\f02c";
+    font-size: 22px;
+    vertical-align: bottom;
+}
+
+.icon-fa-floppy-o-22:before {
+    font-family: "fontawesome";
+    content: "\f0c7";
+    font-size: 22px;
+    vertical-align: bottom;
+}
+
+.icon-fa-plus-22:before {
+    font-family: "fontawesome";
+    content: "\f067";
+    font-size: 22px;
+    vertical-align: bottom;
+}
+
+.icon-fa-cogs-22:before {
+    font-family: "fontawesome";
+    content: "\f085";
+    font-size: 22px;
+    vertical-align: bottom;
+}
+
+.icon-fa-list-ol-22:before {
+    font-family: "fontawesome";
+    content: "\f0cb";
+    font-size: 22px;
+    vertical-align: bottom;
+}
+
+.icon-fa-heartbeat-22:before {
+    font-family: "fontawesome";
+    content: "\f21e";
+    font-size: 22px;
+    vertical-align: bottom;
+}
+
+.icon-fa-chevron-circle-up:before {
+    font-family: "fontawesome";
+    content: "\f139";
+    font-size: 22px;
+    vertical-align: bottom;
+}
+
+.icon-fa-chevron-circle-down:before {
+    font-family: "fontawesome";
+    content: "\f13a";
+    font-size: 22px;
+    vertical-align: bottom;
+}
+
+.icon-fa-chevron-right:before {
+    font-family: "fontawesome";
+    content: "\f054";
+    font-size: 22px;
+    vertical-align: bottom;
+}
+
+.icon-fa-chevron-right-grey:before {
+    font-family: "fontawesome";
+    content: "\f054";
+    color: darkgrey;
+    font-size: 22px;
+    vertical-align: bottom;
 }
 
 .slider {

@@ -1,6 +1,5 @@
 {
-  "name": "s_inventory",
-  "plural": "s_inventory",
+  "name": "Inventory",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -15,10 +14,23 @@
       "type": "string",
       "required": false
     },
-    "shopper": [{ }]
+    "quantity": {
+      "type": "number",
+      "required": true
+    },
+    "price": {
+      "type": "number",
+      "required": true
+    }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "shopper": {
+      "type": "belongsTo",
+      "model": "authenticate",
+      "foreignKey": "memberId"
+    }
+  },
   "acls": [],
   "methods": {}
 }

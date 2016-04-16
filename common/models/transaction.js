@@ -1,3 +1,3 @@
-module.exports = function(transaction) {
+module.exports = function(Transaction) {
 
 };

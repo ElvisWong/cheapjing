@@ -13,13 +13,6 @@
       "./mixins"
     ]
   },
-  "User": {
-    "dataSource": "db"
-  },
-  "AccessToken": {
-    "dataSource": "db",
-    "public": false
-  },
   "ACL": {
     "dataSource": "db",
     "public": false
@@ -32,23 +25,19 @@
     "dataSource": "db",
     "public": false
   },
-  "cheapjing": {
-    "dataSource": "db",
-    "public": true
-  },
-  "Authenticate": {
+  "Member": {
     "dataSource": "cheapjingDS",
     "public": true
   },
-  "cheapjing": {
+  "Inventory": {
     "dataSource": "cheapjingDS",
     "public": true
   },
-  "s_inventory": {
+  "Itemlist": {
     "dataSource": "cheapjingDS",
     "public": true
   },
-  "transaction": {
+  "Transaction": {
     "dataSource": "cheapjingDS",
     "public": true
   }

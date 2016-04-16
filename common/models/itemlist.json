@@ -1,6 +1,5 @@
 {
-  "name": "cheapjing",
-  "plural": "cheapjings",
+  "name": "Itemlist",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -11,9 +10,9 @@
       "type": "string",
       "required": true
     },
-    "wishList": {
+    "description": {
       "type": "string",
-      "required": true
+      "required": false
     }
   },
   "validations": [],
