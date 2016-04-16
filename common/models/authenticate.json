@@ -1,0 +1,39 @@
+{
+  "name": "Authenticate",
+  "plural": "Authenticates",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "password": {
+      "type": "string",
+      "required": true
+    },
+    "oAuthAgent": {
+      "type": "string",
+      "required": true
+    },
+    "userType": {
+      "type": "string",
+      "required": true
+    },
+    "createAt": {
+      "type": "Date",
+      "required": true
+    },
+    "lastLogin": {
+      "type": "Date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

@@ -2,5 +2,17 @@
   "db": {
     "name": "db",
     "connector": "memory"
+  },
+  "cheapjingDS": {
+    "host": "localhost",
+    "port": 27017,
+    "database": "cheapjing",
+    "name": "cheapjing",
+    "server": {
+      "auto_reconnect": true,
+      "reconnectTries": 100,
+      "reconnectInterval": 1000
+    },
+    "connector": "mongodb"
   }
 }
