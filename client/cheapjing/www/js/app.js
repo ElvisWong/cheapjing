@@ -93,6 +93,16 @@ angular.module('starter', ['ionic', 'ionic.service.core', 'ngCordova','starter.c
         }
       })
 
+    .state('buyertab.wishitem', {
+        url: '/wishlist/:index',
+        views: {
+          'tab-wishitem': {
+            templateUrl: 'templates/tab-wishitem.html',
+            controller: 'WishitemCtrl'
+          }
+        }
+      })
+
     .state('buyertab.shop', {
         url: '/shop',
         views: {
@@ -126,12 +136,14 @@ angular.module('starter', ['ionic', 'ionic.service.core', 'ngCordova','starter.c
       .state('shoppertab.inventory', {
         url: '/inventory',
         views: {
-          'tab-investory': {
+          'tab-inventory': {
             templateUrl: 'templates/tab-inventory.html',
             controller: 'InventoryCtrl'
           }
         }
-      });
+      })
+
+      ;
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/login');
