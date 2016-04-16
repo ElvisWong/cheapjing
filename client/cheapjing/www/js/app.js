@@ -7,7 +7,7 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'ngCordova','starter.controllers', 'ngResource', 'lbServices'])
 
-.run(function($ionicPlatform, $state) {
+.run(function($ionicPlatform, $rootScope, $state, $location) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -20,7 +20,12 @@ angular.module('starter', ['ionic', 'ngCordova','starter.controllers', 'ngResour
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
-    // $state.go('login');      
+    $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){
+      if ( toState.data.auth === 'requireLogin' ) {
+          console.log("go back login!");
+          $location.url('/login');
+      }
+    });
   });
 })
 
@@ -33,25 +38,23 @@ angular.module('starter', ['ionic', 'ngCordova','starter.controllers', 'ngResour
   $stateProvider
   
   // setup an abstract state for the tabs directive
-
     .state('login', {
         url: "/login",
-        views: {
-            templateUrl: "templates/login.html",
-            controller: 'LoginCtrl'
-        }
+        templateUrl: "templates/login.html",
+        controller: 'LoginCtrl',
+        data: {auth: ''}
     })
-  
     .state('buyertab', {
       url: '/buyertab',
       abstract: true,
-      templateUrl: 'templates/buyertabs.html'
+      templateUrl: 'templates/buyertabs.html',
+      data: {auth: 'requireLogin'}
     })
-  
     .state('shoppertab', {
       url: '/shoppertab',
       abstract: true,
-      templateUrl: 'templates/shoppertabs.html'
+      templateUrl: 'templates/shoppertabs.html',
+      data: {auth: 'requireLogin'}
     })  
 
     // Each tab has its own nav history stack:
