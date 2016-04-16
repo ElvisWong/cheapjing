@@ -19,8 +19,21 @@
       "type": "string",
       "required": true
     },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "address": {
+      "type": "string",
+      "required": true
+    },
+    "logo": {
+      "type": "string",
+      "required": false
+    },
     "userType": {
       "type": "string",
+      "enum": ["shopper", "buyer"],
       "required": true
     },
     "createAt": {
@@ -28,6 +41,10 @@
       "required": true
     },
     "lastLogin": {
+      "type": "Date",
+      "required": true
+    },
+    "lastUpdated": {
       "type": "Date",
       "required": true
     }
