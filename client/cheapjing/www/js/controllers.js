@@ -16,6 +16,7 @@ angular.module('starter.controllers', [])
 
 	$scope.activate = activate;
 	$scope.getUser = getUser;
+	$scope.add_query = "";
 
 	activate();
 
@@ -32,45 +33,49 @@ angular.module('starter.controllers', [])
 	};
 
 })
-.controller('WishlistCtrl', function($scope, $ionicPopup, Wishlist) {
+.controller('WishlistCtrl', function($scope, $ionicPopup, Wishlist, Itemlist) {
 
 	$scope.items = [];
 	$scope.global_items = [];
+	
 	activate();
 
 	function activate() {
 		console.log("hello world");		
 		$scope.items = Wishlist.all();
+		$scope.global_items = Itemlist.all();
 	}
 
 
+	$scope.onclick_global_itemlist = function (index) {
+		$scope.items.push({
+			id: $scope.global_items[index].id,
+			item_name: $scope.global_items[index].item_name})
+		$scope.global_items.splice(index, 1);
+
+	}
 
     $scope.addItem = function () {
-
-		$scope.items.item_id = "";
-		$scope.items.item_name = "";
-
+    	$scope.global_items.sort(function(a, b){
+    		var id_sort = a.id - b.id
+    		if(id_sort == 0){
+    			return a.item_name - b.item_name;
+    		}
+    		return id_sort;
+    	});
 	    var myPopup = $ionicPopup.show({
-	    template: '<input ng-model="items.item_id" placeholder="Item ID"></br><input ng-model="items.item_name" placeholder="Item Name">',
+	    template: '<input ng-model="add_query" ></br></br>' + 
+	    		'<ion-list>                                '+
+               '  <ion-item ng-click="onclick_global_itemlist($index)" ng-repeat="item in query_items = ( global_items | filter : {item_name: add_query})"> '+
+               '    <h2>{{item.item_name}}</h2><p>Item {{item.id}}</p>                             '+
+               '  </ion-item>                             '+
+               '</ion-list>                               ',
 	    title: 'Add Item to your Wish List',
-	    subTitle: 'Please input item id and name',
+	    
 
 	    scope: $scope,
 	    buttons: [
-	      { text: 'Cancel' },
-	      {
-	        text: '<b >Save</b>',
-	        type: 'button-positive',
-	        onTap: function(e) {
-	          
-			        $scope.items.push({
-			            id: $scope.items.item_id,
-			    		item_name: $scope.items.item_name
-			        });
-
-	          
-	        }
-	      }
+	      { text: 'Finish' }
 	    ]
 	  	});
        
@@ -79,6 +84,10 @@ angular.module('starter.controllers', [])
     $scope.removeItem = function ( idx ) {
 		var item_to_delete = $scope.items[idx];
 		//Wishes.DeletePerson({ id: person_to_delete.id }, function (success) {
+		    $scope.global_items.push({
+		    	id: $scope.items[idx].id,
+		    	item_name: $scope.items[idx].item_name
+		    });
 		    $scope.items.splice(idx, 1);
 		//});
 	};
