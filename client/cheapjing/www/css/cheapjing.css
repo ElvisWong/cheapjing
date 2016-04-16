@@ -1,0 +1,220 @@
+@font-face {
+    font-family: 'fontawesome';
+    src: url('../fonts/fontawesome-webfont.eot');
+    src: url('../fonts/fontawesome-webfont.eot') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff') format('woff'), url('../fonts/fontawesome-webfont.ttf') format('truetype'), url('../fonts/fontawesome-webfont.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {  
+  display: none !important;  
+}
+
+.scroll {
+    height: 100%;
+}
+
+.transparent {
+  background: transparent !important;
+}
+
+.image-modal {
+  width: 100% !important;
+  height: 100%;
+  top: 0 !important;
+  left: 0 !important;
+  background-color: #a6ceb6;
+  opacity: 0.8;    
+}
+
+.fullscreen-image {
+  max-width: 100%;
+  max-height: 100%;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  overflow: auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+.slider {
+  width: 100%;
+  height: 100%;
+}
+
+p.info {
+  position: absolute;
+  bottom: 45px;
+  margin: 0 auto;
+  width: 100%;
+  display: block;
+  text-align: center;
+  font-size: 20px;
+  color: #164d2b;
+}
+
+#profile_google_map, #acesome_google_map {
+    width: 100%;
+    height: 300px;
+    background-color: #CCC;
+}
+
+#fullmap {
+    width: 100%;
+    height: 100%;
+    background-color: #CCC;
+}
+
+.controls {
+    border: 1px solid transparent;
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    position: absolute;
+    line-height: 22px;
+    background-color: #fff;
+}
+
+#type-selector {
+    color: #fff;
+    background-color: #4d90fe;
+    padding: 5px 11px 0px 11px;
+}
+
+#type-selector label {
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 300;
+}
+
+.tab {
+  height: 55px !important;
+  line-height: 55px !important;   
+}
+
+.tab-item .icon {
+  display: block;
+  margin: 6px 0px -6px 0px !important;
+  height: 32px;
+  font-size: 32px; }
+
+.app-icon {
+    background-color: #fff;
+    background: url('../img/app_icon.png') center;
+    background-size: cover;
+    border-radius: 50%;    
+    height: 125px;
+    margin: 0 auto;
+    width: 125px;
+}
+
+ion-item:hover {
+  background-color: lightgrey !important;
+}
+
+.white-input-field {
+    background: white
+}
+
+
+.no-margin {
+  margin: 0 !important;
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+@-webkit-keyframes animate-stripes {
+   100% { background-position: -100px 0px; }
+}
+
+@keyframes animate-stripes {
+   100% { background-position: -100px 0px; }
+}
+
+.input-label {
+  display: table;
+  padding: 7px 10px 7px 0px !important;
+  max-width: 200px;
+  width: 15% !important;
+  color: #444;
+  font-size: 16px; 
+}
+
+.fa {
+    display
+    : inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.fa-fw {
+    width: 1.28571429em;
+    text-align: center;
+}
+
+.icon-tab-fa-home:before {
+    padding-top: 5px;    
+    font-family: "fontawesome";
+    content: "\f015";
+    font-size: 24px;
+    vertical-align: middle, text-bottom;
+    width: 1.28571429em;
+    text-align: center;    
+}
+
+.icon-tab-fa-list-o:before {
+    padding-top: 5px;
+    font-family: "fontawesome";
+    content: "\f0cb";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+    width: 1.28571429em;
+    text-align: center;    
+}
+
+.icon-tab-fa-shopping-cart:before {
+    padding-top: 5px;
+    font-family: "fontawesome";
+    content: "\f07a";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+    width: 1.28571429em;
+    text-align: center;    
+}
+
+.slider {
+    height: 100%;
+}
+
+.scroll {
+    height: 100%;
+}
+
+.default {
+    color: #444;
+}
+
+.danger {
+    color: #ef2a10;
+}
+
+.warning {
+    color: #ea6d12;
+}
+
+.success {
+    color: #189d4b;
+}
+
+.info {
+    color: #4aa0f4;
+}
+
+.input {
+    color: #ef2a10;
+}
