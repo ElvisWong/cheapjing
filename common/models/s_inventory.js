@@ -4,10 +4,10 @@ var loopback = require('loopback');
 
 module.exports = function(s_inventory) {
 
-	s_inventory.create(data, function(err, s_inventory) {
-		if (err) {
-			console.log(err);
-		}
-	});
+	// s_inventory.create(data, function(err, s_inventory) {
+	// 	if (err) {
+	// 		console.log(err);
+	// 	}
+	// });
 
 };
