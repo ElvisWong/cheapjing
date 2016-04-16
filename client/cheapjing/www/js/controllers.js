@@ -290,19 +290,7 @@ angular.module('starter.controllers', [])
 	};
 
 })
-.controller('ShopCtrl', function($scope) {
-
-	$scope.purchase = function () {
-
-		Inventory.reduce({}, function(Inventory) {
-			$scope.items = inventory;
-		}, function(err) {
-			console.log(err)
-		});
-
-	}
-
-})
+.controller('ShopCtrl', function($scope) {})
 
 .controller('RulesCtrl', function($scope) {})
 .controller('InventoryCtrl', function($scope) {
