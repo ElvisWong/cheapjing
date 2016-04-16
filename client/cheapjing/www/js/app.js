@@ -82,4 +82,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/dash');
 
-});
+})
+
+
+// .config(function(LoopBackResourceProvider) {
+ 
+//     // Use a custom auth header instead of the default 'Authorization'
+//     LoopBackResourceProvider.setAuthHeader('X-Access-Token');
+ 
+//     // Change the URL where to access the LoopBack REST API server
+//     LoopBackResourceProvider.setUrlBase('localhost:3000/api/');
+//   });;
