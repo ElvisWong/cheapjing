@@ -5,9 +5,9 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'ngCordova','starter.controllers'])
+angular.module('starter', ['ionic', 'ngCordova','starter.controllers', 'ngResource', 'lbServices'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $state) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -20,7 +20,7 @@ angular.module('starter', ['ionic', 'ngCordova','starter.controllers'])
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
-    $state.go('login');      
+    // $state.go('login');      
   });
 })
 
@@ -43,67 +43,82 @@ angular.module('starter', ['ionic', 'ngCordova','starter.controllers'])
     })
   
     .state('buyertab', {
-    url: '/buyertab',
-    abstract: true,
-    templateUrl: 'templates/buyertabs.html'
-  })
+      url: '/buyertab',
+      abstract: true,
+      templateUrl: 'templates/buyertabs.html'
+    })
   
     .state('shoppertab', {
-    url: '/shoppertab',
-    abstract: true,
-    templateUrl: 'templates/shoppertabs.html'
-  })  
+      url: '/shoppertab',
+      abstract: true,
+      templateUrl: 'templates/shoppertabs.html'
+    })  
 
-  // Each tab has its own nav history stack:
+    // Each tab has its own nav history stack:
 
-  .state('tab.home', {
-    url: '/home',
-    views: {
-      'tab-home': {
-        templateUrl: 'templates/tab-home.html',
-        controller: 'HomeCtrl'
-      }
-    }
-  })  
-  
-  .state('tab.shop', {
-    url: '/shop',
-    views: {
-      'tab-shop': {
-        templateUrl: 'templates/tab-shop.html',
-        controller: 'ShopCtrl'
-      }
-    }
-  })
-
-  .state('tab.wishlist', {
-      url: '/wishlist',
+    .state('buyertab.home', {
+      url: '/home',
       views: {
-        'tab-wishlist': {
-          templateUrl: 'templates/tab-wishlist.html',
-          controller: 'WishlistCtrl'
+        'tab-home': {
+          templateUrl: 'templates/tab-home.html',
+          controller: 'HomeCtrl'
         }
       }
-    })
-    .state('tab.rules', {
-      url: '/rules',
-      views: {
-        'tab-rules': {
-          templateUrl: 'templates/tab-rules.html',
-          controller: 'RulesCtrl'
+    })  
+    .state('buyertab.wishlist', {
+        url: '/wishlist',
+        views: {
+          'tab-wishlist': {
+            templateUrl: 'templates/tab-wishlist.html',
+            controller: 'WishlistCtrl'
+          }
         }
-      }
-    })
-
-  .state('tab.inventory', {
-    url: '/inventory',
-    views: {
-      'tab-investory': {
-        templateUrl: 'templates/tab-inventory.html',
-        controller: 'InventoryCtrl'
-      }
-    }
-  });
+      })
+      .state('buyertab.rules', {
+        url: '/rules',
+        views: {
+          'tab-rules': {
+            templateUrl: 'templates/tab-rules.html',
+            controller: 'RulesCtrl'
+          }
+        }
+      })
+      .state('shoppertab.home', {
+        url: '/home',
+        views: {
+          'tab-home': {
+            templateUrl: 'templates/tab-home.html',
+            controller: 'HomeCtrl'
+          }
+        }
+      })  
+      .state('shoppertab.shop', {
+        url: '/shop',
+        views: {
+          'tab-shop': {
+            templateUrl: 'templates/tab-shop.html',
+            controller: 'ShopCtrl'
+          }
+        }
+      })
+      .state('shoppertab.rules', {
+        url: '/rules',
+        views: {
+          'tab-rules': {
+            templateUrl: 'templates/tab-rules.html',
+            controller: 'RulesCtrl'
+          }
+        }
+      })
+      .state('shoppertab.inventory', {
+        url: '/inventory',
+        views: {
+          'tab-investory': {
+            templateUrl: 'templates/tab-inventory.html',
+            controller: 'InventoryCtrl'
+          }
+        }
+      });
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/login');
@@ -117,5 +132,6 @@ angular.module('starter', ['ionic', 'ngCordova','starter.controllers'])
     LoopBackResourceProvider.setAuthHeader('X-Access-Token');
  
     // Change the URL where to access the LoopBack REST API server
-    LoopBackResourceProvider.setUrlBase('localhost:3000/api/');
-  });;
+    LoopBackResourceProvider.setUrlBase('http://52.221.250.141:3000/api/');
+
+});
