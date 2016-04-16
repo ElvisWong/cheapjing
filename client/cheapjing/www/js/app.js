@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic', 'ngCordova','starter.controllers'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -20,6 +20,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+    $state.go('login');      
   });
 })
 
@@ -30,56 +31,81 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
   $stateProvider
-
+  
   // setup an abstract state for the tabs directive
-    .state('tab', {
-    url: '/tab',
+
+    .state('login', {
+        url: "/login",
+        views: {
+            templateUrl: "templates/login.html",
+            controller: 'LoginCtrl'
+        }
+    })
+  
+    .state('buyertab', {
+    url: '/buyertab',
     abstract: true,
-    templateUrl: 'templates/tabs.html'
+    templateUrl: 'templates/buyertabs.html'
   })
+  
+    .state('shoppertab', {
+    url: '/shoppertab',
+    abstract: true,
+    templateUrl: 'templates/shoppertabs.html'
+  })  
 
   // Each tab has its own nav history stack:
 
-  .state('tab.dash', {
-    url: '/dash',
+  .state('tab.home', {
+    url: '/home',
     views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
+      'tab-home': {
+        templateUrl: 'templates/tab-home.html',
+        controller: 'HomeCtrl'
+      }
+    }
+  })  
+  
+  .state('tab.shop', {
+    url: '/shop',
+    views: {
+      'tab-shop': {
+        templateUrl: 'templates/tab-shop.html',
+        controller: 'ShopCtrl'
       }
     }
   })
 
-  .state('tab.chats', {
-      url: '/chats',
+  .state('tab.wishlist', {
+      url: '/wishlist',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
+        'tab-wishlist': {
+          templateUrl: 'templates/tab-wishlist.html',
+          controller: 'WishlistCtrl'
         }
       }
     })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
+    .state('tab.rules', {
+      url: '/rules',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
+        'tab-rules': {
+          templateUrl: 'templates/tab-rules.html',
+          controller: 'RulesCtrl'
         }
       }
     })
 
-  .state('tab.account', {
-    url: '/account',
+  .state('tab.inventory', {
+    url: '/inventory',
     views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
+      'tab-investory': {
+        templateUrl: 'templates/tab-inventory.html',
+        controller: 'InventoryCtrl'
       }
     }
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/login');
 
 });

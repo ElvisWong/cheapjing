@@ -187,6 +187,27 @@ ion-item:hover {
     text-align: center;    
 }
 
+.icon-tab-fa-cube:before {
+    padding-top: 5px;
+    font-family: "fontawesome";
+    content: "\f1b2";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+    width: 1.28571429em;
+    text-align: center;    
+}
+
+
+.icon-tab-fa-percent:before {
+    padding-top: 5px;
+    font-family: "fontawesome";
+    content: "\f295";
+    font-size: 22px;
+    vertical-align: middle, text-bottom;
+    width: 1.28571429em;
+    text-align: center;    
+}
+
 .slider {
     height: 100%;
 }
