@@ -14,16 +14,16 @@
             <ion-list>
                 <label class="item item-input white-input-field">
                     <span class="input-label"><i class="icon icon-fa-user input"></i></span>
-                    <input type="text" placeholder="Username" ng-model="input.where.email" maxlength="20" required>
+                    <input type="text" placeholder="Username" ng-model="input.email" maxlength="50" required>
                 </label>
                 <div class="spacer" style="height: 10px;"></div>
                 <label class="item item-input white-input-field">
                     <span class="input-label"><i class="icon icon-fa-key input"></i></span>
-                    <input type="password" placeholder="Password" ng-model="input.where.password" maxlength="20" required>
+                    <input type="password" placeholder="Password" ng-model="input.password" maxlength="50" required>
                 </label>
             </ion-list>
             <div class="spacer" style="height: 20px;"></div>
-            <button ng-click="login()" ng-disabled="!(input.where.email && input.where.password)" class="button button-block button-stable icon-left icon-fa-sign-in" type="submit">Login</button>
+            <button ng-click="login()" ng-disabled="!(input.email && input.password)" class="button button-block button-stable icon-left icon-fa-sign-in" type="submit">Login</button>
             <button ng-click="toSignup()" class="button button-block button-assertive icon-left icon-fa-pencil-square-o">SignUp</button>
             <button class="button button-block button-clear">Forget Password</button>
         </form>        

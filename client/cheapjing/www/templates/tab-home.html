@@ -30,7 +30,8 @@
                         <i class="icon icon-fa-user-22"></i>
                     </div>
                     <div class="col">
-                        <h2>{{$root.user.name}}</h2>
+                        <h2 ng-if="$root.user_type == 'shopper'">Watson (Shopper)</h2>
+                        <h2 ng-if="$root.user_type == 'buyer'">Elvis (Buyer)</h2>
                     </div>
                 </div>
             </div>
@@ -40,7 +41,8 @@
                         <i class="icon icon-fa-email-22"></i>
                     </div>
                     <div class="col">
-                        <h2><a href="mailto:{{$root.user.email}}">{{$root.user.email}}</a></h2>
+                        <h2 ng-if="$root.user_type == 'shopper'"><a href="mailto:josietam@howzt.com">josietam@howzt.com</a></h2>
+                        <h2 ng-if="$root.user_type == 'buyer'"><a href="mailto:twongao@gmail.com">twongao@gmail.com</a></h2>
                     </div>
                 </div>
             </div>
@@ -50,7 +52,7 @@
                         <i class="icon icon-fa-map-marker"></i>
                     </div>
                     <div ng-if="$root.user.address && $root.user.address != '' && $root.user.address != 'string'" class="col col-80" ng-click="onClickGoogleMap()">
-                        <h2>{{$root.user.address}}</h2>
+                        <h2>Mei Foo, Hong Kong</h2>
                     </div>
                     <div ng-if="!($root.user.address && $root.user.address != '' && $root.user.address != 'string')" class="col col-80">
                         <h2><i class="icon icon-fa-times assertive"></i></h2>

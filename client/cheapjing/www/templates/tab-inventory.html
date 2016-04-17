@@ -1,15 +1,55 @@
 <ion-view view-title="Inventory">
-  <ion-content overflow-scroll="true">
-    <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="item in items" type="item-text-wrap" >
-        <h2>{{item.item_name}}</h2>
-        <p>Item {{item.id}}</p>
-        <i class="icon ion-chevron-right icon-accessory"></i>
-        <ion-option-button class="button-assertive" ng-click="removeItem($index)">
-          Delete
-        </ion-option-button>
-      </ion-item>
-    </ion-list>
-    <button class="button button-block button-assertive" ng-click="addItem()">Add</button>
-  </ion-content>
+  <ion-content>
+    <div class="list card">
+        <div class="item item-avatar">
+            <img src="img/pklogo.png">
+            <h2>PK Shop</h2>
+            <p>Apr 17, 2016 07:09</p>
+        </div>
+        <div class="item item-body">
+            <img class="full-image" src="img/salmon.jpg">
+            <div class="row row-center">
+                <div class="col col-center col-75"><p><b>Fish</b><br>FROZEN SNUBNOSE POMPANO(FISH) 1PC</p></div>
+                <div class="col col-center col-25"><h2 style="color:red"><b>$19.90</b></h2></div>
+            </div>
+            <p>
+                <a href="#" class="subdued">Edit (7)</a>
+            </p>
+        </div>
+    </div>
+    <div class="list card">
+        <div class="item item-avatar">
+            <img src="img/welcome.jpg">
+            <h2>Welcome Shop</h2>
+            <p>Apr 17, 2016 07:01</p>
+        </div>
+        <div class="item item-body">
+            <img class="full-image" src="img/fish.jpg">
+            <div class="row row-center">
+                <div class="col col-center col-75"><p><b>Fish</b><br>FROZEN NORWEGIAN ATLANIC SALMON STEAK 2PCS</p></div>
+                <div class="col col-center col-25"><h2 style="color:red"><b>$33.80</b></h2></div>
+            </div>
+            <p>
+                <a href="#" class="subdued">Edit (8)</a>
+            </p>
+        </div>
+    </div>
+    <div class="list card">
+        <div class="item item-avatar">
+            <img src="img/pklogo.png">
+            <h2>PK Shop</h2>
+            <p>Apr 17, 2016 06:58</p>
+        </div>
+        <div class="item item-body">
+            <img class="full-image" src="img/milk.jpg">
+            <div class="row row-center">
+                <div class="col col-center col-75"><p><b>Hidaka</b><br>HOKKAIDO FURANO MILK 3.7 1L</p></div>
+                <div class="col col-center col-25"><h2 style="color:red"><b>$33.40</b></h2></div>
+            </div>
+            <p>
+                <a href="#" class="subdued">Edit (10)</a>
+            </p>
+        </div>
+    </div>
+    </ion-content>
 </ion-view>

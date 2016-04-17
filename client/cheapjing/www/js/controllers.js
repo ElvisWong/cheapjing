@@ -146,6 +146,8 @@ angular.module('starter.controllers', [])
 
 	$scope.wishes = [];
 	$scope.global_items = [];
+    
+    $rootScope.user_type = null;
 
 	$rootScope.user = {};
 
@@ -155,9 +157,8 @@ angular.module('starter.controllers', [])
     $scope.logout = logout;
 
     $scope.input = {};
-    $scope.input.where = {};
-    $scope.input.where.email = 'abc@abc.com';
-    $scope.input.where.password = '123456';
+    $scope.input.email = null;
+    $scope.input.password = null;
     
     $rootScope.system = {};
     $rootScope.system.version = 'v 0.9 beta';
@@ -181,15 +182,37 @@ angular.module('starter.controllers', [])
         //if(!$rootScope.isInternetConnected()){
             //$rootScope.alertInternetDisconnected();
         //};
-        //$state.go('buyertab.home');
+        //$state.go('shoppertab.home');
+        
+        //$scope.input = $scope.input.where;
+        //console.log($scope.input);
+        
+        if($scope.input.email == 'josietam@howzt.com' && $scope.input.password == '1234'){
+            $rootScope.user_type = 'shopper';
+            $state.go('shoppertab.home');
+        }
+        else if($scope.input.email == 'twongao@gmail.com' && $scope.input.password == '1234'){
+            $rootScope.user_type = 'buyer';
+            $state.go('shoppertab.home');
+        }
+        else{
+            $ionicPopup.alert({
+                title: '<i class="icon icon-fa-info-circle"></i> Login Status',
+                template: 'Username or Password incorrect.',
+                okText: 'OK'
+            });
+        }
+        
+//        console.log($scope.input.where);
+/*        
         Loading.show($ionicLoading);
-		Member.findOne(JSON.stringify($scope.input), function(user) {
+		Member.findOne($scope.input, function(user) {
             Loading.hide($ionicLoading);
-			//console.log("user: ", user);
+			console.log("user: ", user);
             $rootScope.user = user;
             //alert(user.userType);
-            $scope.input.where.email = null;
-            $scope.input.where.password = null;
+//            $scope.input.where.email = null;
+//            $scope.input.where.password = null;
             
             if(user.userType == 'buyer'){
                 $state.go('buyertab.home');
@@ -199,8 +222,13 @@ angular.module('starter.controllers', [])
             }
 		}, function(e) {
 			//alert(JSON.stringify(e));
+            $ionicPopup.alert({
+                title: '<i class="icon icon-fa-info-circle"></i> Login Status',
+                template: 'Username or Password incorrect.',
+                okText: 'OK'
+            });
 		});
-
+*/
     };
 
     $rootScope.alertInternetDisconnected = function () {
@@ -374,33 +402,5 @@ angular.module('starter.controllers', [])
 
 .controller('RulesCtrl', function($scope) {})
 .controller('InventoryCtrl', function($scope) {
-
-	$scope.items = [];
-
-	activate()
-
-	function activate() {
-		$scope.items = Inventory.all();
-	}
-
-    $scope.addItem = function () {
-
-        $scope.items.push({
-            id: $scope.item_id,
-            shopper_id: $scope.shopper_id,
-            vol: $scope.vol,
-            std_price: $scope.std_price
-        });
-
-       
-    };
-
-    $scope.removeItem = function ( idx ) {
-		var item_to_delete = $scope.items[idx];
-		//Inventory.DeletePerson({ id: person_to_delete.id }, function (success) {
-		    $scope.items.splice(idx, 1);
-		//});
-	};
-
 
 });
