@@ -8,6 +8,7 @@
         <div class="content">
             <div class="app-icon"></div>
             <h2 style="text-align: center">Cheap<span style="color:red">Jing</span></h2>
+            <h4 style="text-align: center">{{$root.system.version}}</h4>
         </div>  
         <div class="spacer" style="height: 20px;"></div>
         <label class="item item-input white-input-field">
@@ -19,6 +20,11 @@
             <span class="input-label"><i class="icon icon-fa-email input"></i></span>
             <input type="email" placeholder="Email" ng-model="input.email" maxlength="50" required>
         </label>
+        <div class="spacer" style="height: 10px;"></div>          
+        <label class="item item-input white-input-field">
+            <span class="input-label"><i class="icon icon-fa-map-marker input"></i></span>
+            <input type="email" placeholder="Email" ng-model="input.address" maxlength="50" required>
+        </label>
         <div class="spacer" style="height: 10px;"></div>                   
         <label class="item item-input white-input-field">
             <span class="input-label"><i class="icon icon-fa-key input"></i></span>
@@ -29,8 +35,13 @@
             <span class="input-label"><i class="icon icon-fa-key input"></i></span>
             <input type="password" placeholder="Confirm Password" ng-model="input.confirm_password" maxlength="20" required>
         </label>
+        <div class="spacer" style="height: 10px;"></div>                   
+        <label class="item item-select">
+            <span class="input-label"><i class="icon icon-fa-key input"></i></span>
+            <select ng-model="temp.user_type_choice_input" ng-options="choice.label for choice in select.user_type_choice" required></select>
+        </label>
         <div class="spacer" style="height: 10px;"></div>
-        <button class="button button-block button-assertive icon-left icon-fa-pencil-square-o" type="submit" ng-click="signup()" ng-disabled="!(input.user_email && input.user_name && input.user_password && input.confirm_password && (input.password == input.confirm_password))">Submit</button>
+        <button class="button button-block button-assertive icon-left icon-fa-pencil-square-o" ng-click="signup()" ng-disabled="!(input.name && input.email && input.address && input.password && input.confirm_password && (input.password == input.confirm_password))">Submit</button>
         <div class="spacer" style="height: 40px;"></div>
     </ion-content>
 </ion-view>

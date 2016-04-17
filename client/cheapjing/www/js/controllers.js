@@ -2,9 +2,6 @@ angular.module('starter.controllers', [])
 
 .controller('googlemapCtrl', function($scope, $rootScope){
 
-
-	
-    
     $scope.disableTap = function() {
         var container = document.getElementsByClassName('pac-container');
         angular.element(container).attr('data-tap-disabled', 'true');
@@ -104,7 +101,42 @@ angular.module('starter.controllers', [])
     $scope.card.isWhitelistDetails = true;
 })
 
-.controller('signupCtrl', function($scope, $rootScope, $state){
+.controller('signupCtrl', function($scope, $rootScope, $state, Member, Loading, $ionicLoading, $ionicHistory, $ionicPopup){
+    
+    $scope.select = {};
+    $scope.select.user_type_choice = [
+        {'id': 0, 'label': 'Buyer', 'value': 'Buyer'},
+        {'id': 1, 'label': 'Shopper', 'value': 'Shopper'}
+    ];
+    
+    $scope.temp = {};
+    $scope.temp.user_type_choice_input = null;
+    
+    $scope.input = {};
+    $scope.input.name = 'CY Kwong';
+    $scope.input.password = 'alpha5au';
+    $scope.input.confirm_password = 'alpha5au';
+    $scope.input.address = 'Mei Foo, Hong Kong';
+    $scope.input.email = 'cykwongaa@connect.ust.hk';
+    $scope.temp.user_type_choice_input = $scope.select.user_type_choice[0];
+    
+    $scope.signup = function() {
+        $scope.input.userType = $scope.temp.user_type_choice_input.value;
+        Loading.show($ionicLoading);
+        Member.create($scope.input, function(response){
+            Loading.hide($ionicLoading);
+            $ionicPopup.alert({
+                title: '<i class="icon icon-fa-info-circle"></i> Signup Status',
+                template: 'Signup Successfully!',
+                okText: 'OK'
+            }).then(function(response){
+                $state.go('login');
+                $ionicHistory.clearHistory();
+            });
+        }, function(e) {
+			alert(JSON.stringify(e));
+		});
+    }
     
 })
 
@@ -124,6 +156,9 @@ angular.module('starter.controllers', [])
     $scope.input.where = {};
     $scope.input.where.email = 'abc@abc.com';
     $scope.input.where.password = '123456';
+    
+    $rootScope.system = {};
+    $rootScope.system.version = 'v 0.9 beta';
     
     $rootScope.internetPopupLock = false;
 
@@ -148,7 +183,7 @@ angular.module('starter.controllers', [])
         Loading.show($ionicLoading);
 		Member.findOne(JSON.stringify($scope.input), function(user) {
             Loading.hide($ionicLoading);
-			console.log("user: ", user);
+			//console.log("user: ", user);
             $rootScope.user = user;
             //alert(user.userType);
             $scope.input.where.email = null;
@@ -161,7 +196,7 @@ angular.module('starter.controllers', [])
                 $state.go('shoppertab.home');
             }
 		}, function(e) {
-			alert(JSON.stringify(e));
+			//alert(JSON.stringify(e));
 		});
 
     };
@@ -184,25 +219,13 @@ angular.module('starter.controllers', [])
 })
 
 .controller('HomeCtrl', function($scope, $rootScope, $ionicPopup, $state) {
-    
-    $scope.card = {};
-    $scope.card.isProfileInfo = true;
-    $scope.card.isNotification = true;
-    
+        
     $scope.init = init;
     $scope.changeProfileInfo = changeProfileInfo;
     $scope.changeNotification = changeNotification;
     
     function init() {
         $scope.initGoogleMap();
-    }
-    
-    function changeNotification() {
-        $scope.card.isNotification = !$scope.card.isNotification;
-    }
-    
-    function changeProfileInfo() {
-        $scope.card.isProfileInfo = !$scope.card.isProfileInfo;
     }
     
     $scope.onClickGoogleMap = function() {

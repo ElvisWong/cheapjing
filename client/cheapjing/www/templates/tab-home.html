@@ -18,55 +18,13 @@
             </ion-slide>
         </ion-slide-box>
         <div class="card">
-            <div ng-if="card.isNotification" ng-click="changeNotification()" class="item item-divider">
+            <div class="item item-divider">
                 <div class="row row-center">
-                    <div class="col col-10"></div>
-                    <div class="col col-80">
-                        <h2 style="text-align: center;"><i class="icon icon-fa-bell"></i> <b>Notification</b></h2></div>
-                    <div class="col col-10">
-                        <h2 style="text-align: right;"><i class="icon icon-fa-minus-square"></i></h2></div>
-                </div>
-            </div>
-            <div ng-if="!card.isNotification" ng-click="changeNotification()" class="item item-divider">
-                <div class="row row-center">
-                    <div class="col col-10"></div>
-                    <div class="col col-80">
-                        <h2 style="text-align: center;"><i class="icon icon-fa-bell"></i> <b>Notification</b></h2></div>
-                    <div class="col col-10">
-                        <h2 style="text-align: right;"><i class="icon icon-fa-plus-square"></i></h2></div>
-                </div>
-            </div>
-            <div ng-if="card.isNotification" class="item item-text-wrap">
-                <div class="row row-center">
-                    <div class="col col-20">
-                        <i class="icon icon-fa-commenting-22"></i>
-                    </div>
-                    <div class="col">
-                        <h2>No System Message</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div ng-if="card.isProfileInfo" ng-click="changeProfileInfo()" class="item item-divider">
-                <div class="row row-center">
-                    <div class="col col-10"></div>
-                    <div class="col col-80">
-                        <h2 style="text-align: center;"><i class="icon icon-fa-info-circle"></i> <b>User Profile</b></h2></div>
-                    <div class="col col-10">
-                        <h2 style="text-align: right;"><i class="icon icon-fa-minus-square"></i></h2></div>
-                </div>
-            </div>
-            <div ng-if="!card.isProfileInfo" ng-click="changeProfileInfo()" class="item item-divider">
-                <div class="row row-center">
-                    <div class="col col-10"></div>
-                    <div class="col col-80">
+                    <div class="col col-center">
                         <h2 style="text-align: center;"><i class="icon icon-fa-info-circle"></i> <b>UserProfile</b></h2></div>
-                    <div class="col col-10">
-                        <h2 style="text-align: right;"><i class="icon icon-fa-plus-square"></i></h2></div>
                 </div>
             </div>
-            <div ng-show="card.isProfileInfo" class="item item-text-wrap">
+            <div class="item item-text-wrap">
                 <div class="row row-center">
                     <div class="col col-20">
                         <i class="icon icon-fa-user-22"></i>
@@ -76,7 +34,7 @@
                     </div>
                 </div>
             </div>
-            <div ng-show="card.isProfileInfo" class="item item-text-wrap">
+            <div class="item item-text-wrap">
                 <div class="row row-center">
                     <div class="col col-20">
                         <i class="icon icon-fa-email-22"></i>
@@ -86,7 +44,7 @@
                     </div>
                 </div>
             </div>
-            <div ng-show="card.isProfileInfo" class="item item-text-wrap">
+            <div class="item item-text-wrap">
                 <div class="row row-center">
                     <div class="col col-20">
                         <i class="icon icon-fa-map-marker"></i>
