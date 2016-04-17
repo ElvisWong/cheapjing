@@ -37,6 +37,8 @@ angular.module('starter.controllers', [])
                         position: results[0].geometry.location
                     });
 
+                    console.log(marker);
+
                     var input = /** @type {HTMLInputElement} */ (
                         document.getElementById('pac-input'));
 
@@ -173,12 +175,12 @@ angular.module('starter.controllers', [])
     function logout() {
         $rootScope.user = {};
         $state.go('login');
-    }
+    };
     
 	function getUser() {
-        if(!$rootScope.isInternetConnected()){
-            $rootScope.alertInternetDisconnected();
-        };
+        //if(!$rootScope.isInternetConnected()){
+            //$rootScope.alertInternetDisconnected();
+        //};
         //$state.go('buyertab.home');
         Loading.show($ionicLoading);
 		Member.findOne(JSON.stringify($scope.input), function(user) {
@@ -288,9 +290,13 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('WishlistCtrl', function($scope, $ionicPopup, Itemlist ,Wishlist, $state) {
+.controller('WishlistCtrl', function($scope, $ionicPopup, Itemlist ,Wishlist, $state, $rootScope) {
 	$scope.items = [];
 	$scope.global_items = [];
+
+    $scope.$on("$viewContentLoaded", function(event) {
+        jQuery('.item-content').css('background-color', "red");
+    });
 	
 	activate();
 

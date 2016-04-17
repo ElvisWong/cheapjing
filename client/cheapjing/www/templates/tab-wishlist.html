@@ -1,7 +1,8 @@
 <ion-view view-title="Wish List" hide-nav-bar="false" hide-back-button="false" can-swipe-back="false">
   <ion-content overflow-scroll="true">
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-click="onclick_wishes({{item.id}})" ng-repeat="item in wishes" type="item-text-wrap" >
+      <ion-item ng-click="toWhitelistItem(item)" class="item-remove-animate item-avatar item-icon-right wishlist-item" ng-click="onclick_wishes({{item.id}})" ng-repeat="item in items" type="item-text-wrap" >
+        <div ng-attr-id="{{'indicator-' + $index % 6}}"></div>
         <h2>{{item.item_name}}</h2>
         <p>Item {{item.id}}</p>
         <i class="icon ion-chevron-right icon-accessory"></i>

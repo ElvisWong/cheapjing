@@ -10,6 +10,92 @@
   display: none !important;  
 }
 
+.label {
+    background: #abcabc;
+}
+
+.wishlist-item > .item-content {
+    padding-left: 20px !important;
+}
+
+#indicator-0 {
+    position: relative; 
+    float: left;
+    margin: 10px 30px 10px 0px;
+    width: 20px;
+    height: 20px;
+    line-height: 30px;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid #dddddd;
+    background-color: orange;
+}
+
+#indicator-1 {
+    position: relative; 
+    float: left;
+    margin: 10px 30px 10px 0px;
+    width: 20px;
+    height: 20px;
+    line-height: 30px;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid #dddddd;
+    background-color: red;
+}
+
+#indicator-2 {
+    position: relative; 
+    float: left;
+    margin: 10px 30px 10px 0px;
+    width: 20px;
+    height: 20px;
+    line-height: 30px;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid #dddddd;
+    background-color: blue;
+}
+
+#indicator-3 {
+    position: relative; 
+    float: left;
+    margin: 10px 30px 10px 0px;
+    width: 20px;
+    height: 20px;
+    line-height: 30px;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid #dddddd;
+    background-color: green;
+}
+
+#indicator-4 {
+    position: relative; 
+    float: left;
+    margin: 10px 30px 10px 0px;
+    width: 20px;
+    height: 20px;
+    line-height: 30px;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid #dddddd;
+    background-color: purple;
+}
+
+#indicator-5 {
+    position: relative; 
+    float: left;
+    margin: 10px 30px 10px 0px;
+    width: 20px;
+    height: 20px;
+    line-height: 30px;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid #dddddd;
+    background-color: yellow;
+}
+
 .scroll {
     height: 100%;
 }

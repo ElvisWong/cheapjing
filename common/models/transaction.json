@@ -32,10 +32,10 @@
   },
   "validations": [],
   "relations": {
-    "s_inventory": {
+    "inventory": {
       "type": "belongsTo",
-      "model": "s_inventory",
-      "foreignKey": "item"
+      "model": "inventory",
+      "foreignKey": "itemId"
     },
     "authenticate": {
       "type": "belongsTo",
