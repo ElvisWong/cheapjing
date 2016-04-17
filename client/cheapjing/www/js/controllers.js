@@ -187,11 +187,11 @@ angular.module('starter.controllers', [])
         //$scope.input = $scope.input.where;
         //console.log($scope.input);
         
-        if($scope.input.email == 'josietam@howzt.com' && $scope.input.password == '1234'){
+        if($scope.input.email == 'josie' && $scope.input.password == '1234'){
             $rootScope.user_type = 'shopper';
             $state.go('shoppertab.home');
         }
-        else if($scope.input.email == 'twongao@gmail.com' && $scope.input.password == '1234'){
+        else if($scope.input.email == 'albert' && $scope.input.password == '1234'){
             $rootScope.user_type = 'buyer';
             $state.go('shoppertab.home');
         }
