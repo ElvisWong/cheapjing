@@ -223,8 +223,6 @@ angular.module('starter.controllers', [])
 .controller('HomeCtrl', function($scope, $rootScope, $ionicPopup, $state) {
         
     $scope.init = init;
-    $scope.changeProfileInfo = changeProfileInfo;
-    $scope.changeNotification = changeNotification;
     
     function init() {
         $scope.initGoogleMap();
