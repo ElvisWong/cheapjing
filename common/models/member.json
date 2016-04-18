@@ -1,0 +1,45 @@
+{
+  "name": "Member",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "password": {
+      "type": "string",
+      "required": true
+    },
+    "name": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "logo": {
+      "type": "string"
+    },
+    "userType": {
+      "type": "string",
+      "enum": ["shopper", "buyer"],
+      "required": true
+    },
+    "lastLogin": {
+      "type": "Date"
+    },
+    "wishList": {
+      "type": ["object"]
+    },
+    "inventoryList": {
+      "type": ["object"]
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

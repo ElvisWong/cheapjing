@@ -1,6 +1,5 @@
 {
-  "name": "transaction",
-  "plural": "transactions",
+  "name": "Transaction",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -8,17 +7,17 @@
   },
   "properties": {
     "item": {
-      "type": "Schema.Types.ObjectId",
+      "type": "string",
       "ref": "s_itemList",
       "required": true
     },
     "shopper": {
-      "type": "Date.Types.ObjectId",
+      "type": "string",
       "ref": "authenticate",
       "required": true
     },
     "buyer": {
-      "type": "Date.Types.ObjectId",
+      "type": "string",
       "ref": "authenticate",
       "required": true
     },
@@ -32,7 +31,23 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "inventory": {
+      "type": "belongsTo",
+      "model": "inventory",
+      "foreignKey": "itemId"
+    },
+    "authenticate": {
+      "type": "belongsTo",
+      "model": "authenticate",
+      "foreignKey": "shopper"
+    },
+    "authenticate": {
+      "type": "belongsTo",
+      "model": "authenticate",
+      "foreignKey": "buyer"
+    }
+  },
   "acls": [],
   "methods": {}
 }

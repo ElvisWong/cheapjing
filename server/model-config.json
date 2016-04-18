@@ -16,10 +16,6 @@
   "User": {
     "dataSource": "db"
   },
-  "AccessToken": {
-    "dataSource": "db",
-    "public": false
-  },
   "ACL": {
     "dataSource": "db",
     "public": false
@@ -32,12 +28,21 @@
     "dataSource": "db",
     "public": false
   },
-  "cheapjing": {
-    "dataSource": "db",
+  "Member": {
+    "dataSource": "cheapjingDS",
     "public": true
   },
-  "Authenticate": {
+  "Inventory": {
+    "dataSource": "cheapjingDS",
+    "public": true
+  },
+  "Itemlist": {
+    "dataSource": "cheapjingDS",
+    "public": true
+  },
+  "Transaction": {
     "dataSource": "cheapjingDS",
     "public": true
   }
+
 }
