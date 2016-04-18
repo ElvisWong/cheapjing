@@ -23,7 +23,7 @@ angular.module('starter.controllers', [])
 
         try{
             var geocoder = new google.maps.Geocoder();
-            $scope.address = $rootScope.user.address;
+            $scope.address = 'Mei Foo, Hong Kong';
             
             var contentString = '<h5><b>' + $rootScope.user.name + '</b><br>' + $scope.address + '</h5><br>';
 
@@ -282,11 +282,12 @@ angular.module('starter.controllers', [])
             };
 
             var geocoder = new google.maps.Geocoder();
-            $rootScope.user.address = 'Mei Foo, Hong Kong';
-            $scope.address = $rootScope.user.address;
+            //$rootScope.user.address = 'Mei Foo, Hong Kong';
+            $scope.hello = {};
+            $scope.hello.address = 'Mei Foo, Hong Kong';
             var contentString = '<h4>' + $scope.address + '</h4>';
 
-            geocoder.geocode({'address': $scope.address}, function(results, status) {
+            geocoder.geocode({'address': $scope.hello.address}, function(results, status) {
                 if (status === google.maps.GeocoderStatus.OK) {
                     var map = new google.maps.Map(document.getElementById('google_map'), mapOptions);
                     

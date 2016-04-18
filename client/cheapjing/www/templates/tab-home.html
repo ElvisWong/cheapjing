@@ -51,15 +51,15 @@
                     <div class="col col-20">
                         <i class="icon icon-fa-map-marker"></i>
                     </div>
-                    <div ng-if="$root.user.address && $root.user.address != '' && $root.user.address != 'string'" class="col col-80" ng-click="onClickGoogleMap()">
+                    <div ng-if="hello.address" class="col col-80" ng-click="onClickGoogleMap()">
                         <h2>Mei Foo, Hong Kong</h2>
                     </div>
-                    <div ng-if="!($root.user.address && $root.user.address != '' && $root.user.address != 'string')" class="col col-80">
+                    <div ng-if="!hello.address">
                         <h2><i class="icon icon-fa-times assertive"></i></h2>
                     </div>
                 </div>
-                <div ng-if="$root.user.address && $root.user.address != '' && $root.user.address != 'string'" class="spacer" style="height: 3px;"></div>
-                <div ng-if="$root.user.address && $root.user.address != '' && $root.user.address != 'string'" class="row row-center">
+                <div ng-if="hello.address" class="spacer" style="height: 3px;"></div>
+                <div ng-if="hello.address" class="row row-center">
                     <div class="col col-center" id="google_map" data-tap-disabled="true"></div>
                 </div>
             </div>
